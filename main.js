@@ -1,3 +1,38 @@
+// ============================================
+// Animated Counter Functionality
+// ============================================
+
+function animateCounter(element, target, duration = 1200) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    function update() {
+        start += increment;
+        if (start < target) {
+            element.textContent = Math.floor(start);
+            requestAnimationFrame(update);
+        } else {
+            element.textContent = target;
+        }
+    }
+    update();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ...existing code...
+
+    // Animated counters for stats
+    const counters = [
+        { selector: '.phd-count', value: 6 },
+        { selector: '.funding-count', value: 250000 },
+        { selector: '.pub-count', value: 70 },
+        { selector: '.industry-count', value: 3 }
+    ];
+    counters.forEach(counter => {
+        const el = document.querySelector(counter.selector);
+        if (el) animateCounter(el, counter.value);
+    });
+
+    // ...existing code...
 document.documentElement.setAttribute('data-theme', currentTheme);
 // Dark mode functionality removed
 
