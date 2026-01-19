@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publications by Dr Festus Adedoyin - Books, Journal Articles, Conference Papers, and Book Chapters on Data Science, AI, FinTech, and Applied Economics.">
+    <meta name="keywords" content="Festus Adedoyin, Publications, Research Papers, Books, Journal Articles, Machine Learning, FinTech, Economics">
+    <title>Publications - Dr Festus Adedoyin</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand"><a href="index.html">Dr Festus Adedoyin</a></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">AI Projects</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">
+                            <span class="dark-icon">🌙</span>
+                            <span class="light-icon">☀️</span>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <select id="language-selector" class="language-selector" onchange="translatePage()">
+                        <option value="">🌐 Language</option>
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="zh-CN">中文</option>
+                        <option value="ar">العربية</option>
+                        <option value="pt">Português</option>
+                        <option value="es">Español</option>
+                        <option value="sw">Kiswahili</option>
+                        <option value="yo">Yorùbá</option>
+                        <option value="ha">Hausa</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Publications</h1>
+            <p>Books, journals, conferences, chapters</p>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications">
+        <div class="container">
+            <p class="publications-intro">
+                My research output spans machine learning applications, environmental economics, FinTech innovation, and digital health. 
+                I have published in high-impact journals including <em>Technological Forecasting and Social Change</em>, 
+                <em>Future Generation Computer Systems</em>, and <em>Energy Policy</em>, and presented at flagship IEEE conferences. 
+                Below is a comprehensive list of my academic contributions.
+            </p>
+
+            <div class="publication-controls">
+                <div class="publication-search">
+                    <div class="search-box">
+                        <input type="text" id="publication-search" placeholder="Search publications by title, author, or keyword...">
+                        <span class="search-icon">🔍</span>
+                        <button id="search-clear" class="search-clear">×</button>
+                    </div>
+                </div>
+                <div id="search-results-info" class="search-results-info" style="display: none;"></div>
+                
+                <div class="publication-actions">
+                    <div class="publication-sort">
+                        <button class="sort-btn active" data-sort="year-desc">Newest First</button>
+                        <button class="sort-btn" data-sort="year-asc">Oldest First</button>
+                    </div>
+                    <button id="export-bibtex-all" class="btn-export-bibtex">
+                        📄 Export All to BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <div class="publication-filter">
+                <button class="filter-btn active" data-filter="all">All Publications</button>
+                <button class="filter-btn" data-filter="books">Books</button>
+                <button class="filter-btn" data-filter="journals">Journal Articles</button>
+                <button class="filter-btn" data-filter="conferences">Conference Papers</button>
+                <button class="filter-btn" data-filter="chapters">Book Chapters</button>
+            </div>
+
+            <div class="publication-category" data-category="books">
+                <h3>Books (Editor)</h3>
+                
+                <div class="publication-item">
+                    <h4>Digital competence in agile and hierarchical organisations: Operational performance under global uncertainties</h4>
+                    <p class="pub-details">Adedoyin, F. (ed.) (2025). London: Routledge.</p>
+                    <a href="https://doi.org/10.4324/9781003535416" class="pub-link" target="_blank">DOI: 10.4324/9781003535416 →</a>
+                </div>
+                
+                <div class="publication-item">
+                    <h4>Simulation and machine learning models for energy policy design</h4>
+                    <p class="pub-details">Adedoyin, F. (ed.) (2025). Burlington, MA: Elsevier.</p>
+                    <a href="https://doi.org/10.1016/C2024-0-00210-X" class="pub-link" target="_blank">DOI: 10.1016/C2024-0-00210-X →</a>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Generative AI and multifactor productivity in business</h4>
+                    <p class="pub-details">Adedoyin, F. F., & Christiansen, B. (2024). IGI Global.</p>
+                    <a href="https://doi.org/10.4018/9798369311981" class="pub-link" target="_blank">DOI: 10.4018/9798369311981 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Handbook of research on cybersecurity risk in contemporary business systems</h4>
+                    <p class="pub-details">Adedoyin, F. F., & Christiansen, B. (2023). IGI Global.</p>
+                    <a href="https://doi.org/10.4018/978-1-6684-7207-1" class="pub-link" target="_blank">DOI: 10.4018/978-1-6684-7207-1 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Global perspectives on cybersecurity risk in contemporary business systems</h4>
+                    <p class="pub-details">Adedoyin, F. A., Adedoyin, F. F., & Christiansen, B. (2023). Information Science Reference.</p>
+                </div>
+
+                <div class="publication-item">
+                    <h4>Effective cybersecurity operations for enterprise-wide systems</h4>
+                    <p class="pub-details">Adedoyin, F. F., & Christiansen, B. (2023). IGI Global.</p>
+                    <a href="https://doi.org/10.4018/978-1-6684-9018-1" class="pub-link" target="_blank">DOI: 10.4018/978-1-6684-9018-1 →</a>
+                </div>
+            </div>
+
+            <div class="publication-category" data-category="journals">
+                <h3>Selected Journal Articles (2020–2026)</h3>
+
+                <div class="publication-item featured-pub">
+                    <span class="pub-year">2026</span>
+                    <h4>Beyond cultural borders: Self-construal, religiosity and consumer response to cause-related marketing</h4>
+                    <p class="pub-details">Ndasi, W. N., & Adedoyin, F. (2026). <em>International Journal of Consumer Studies</em>, 50(1).</p>
+                    <a href="https://doi.org/10.1111/ijcs.70151" class="pub-link" target="_blank">DOI: 10.1111/ijcs.70151 →</a>
+                </div>
+
+                <div class="publication-item featured-pub">
+                    <span class="pub-year">2025</span>
+                    <h4>Curbing environmental degradation in Oceanic-Asia: does innovation matter?</h4>
+                    <p class="pub-details">Musibau, H. O., Adedoyin, F. F., Adeleye, B. N., & Zakari, A. (2025). <em>Journal of the Asia Pacific Economy</em>.</p>
+                    <a href="https://doi.org/10.1080/13547860.2025.2563990" class="pub-link" target="_blank">DOI: 10.1080/13547860.2025.2563990 →</a>
+                </div>
+
+                <div class="publication-item featured-pub">
+                    <span class="pub-year">2025</span>
+                    <h4>Supply side sentiments and international travel: a novel dynamic simulation of policy options for business and investor sentiments</h4>
+                    <p class="pub-details">Adamolekun, G., Adedoyin, F. F., & Ozturk, I. (2025). <em>Journal of Policy Research in Tourism Leisure and Events</em>, 17(1), 90-112.</p>
+                    <a href="https://doi.org/10.1080/19407963.2022.2142235" class="pub-link" target="_blank">DOI: 10.1080/19407963.2022.2142235 →</a>
+                </div>
+
+                <div class="publication-item featured-pub">
+                    <span class="pub-year">2025</span>
+                    <h4>Examining the role of remittances, technological innovation, and foreign direct investment on environmental quality in Pakistan: Fresh evidence from a novel dynamic ARDL simulation approach</h4>
+                    <p class="pub-details">Javed, A., Rapposelli, A., Adedoyin, F. F., & Arshad, Z. (2025). <em>Social Indicators Research</em>, 179(1), 123-151.</p>
+                    <a href="https://doi.org/10.1007/s11205-025-03599-6" class="pub-link" target="_blank">DOI: 10.1007/s11205-025-03599-6 →</a>
+                </div>
+
+                <div class="publication-item featured-pub">
+                    <span class="pub-year">2025</span>
+                    <h4>The impact of trade openness, export concentration and economic complexity on energy demand among G7 countries</h4>
+                    <p class="pub-details">Can, M., Balsalobre-Lorente, D., Adedoyin, F. F., & Mercan, M. (2025). <em>Energy and Environment</em>, 36(2), 638-659.</p>
+                    <a href="https://doi.org/10.1177/0958305X231177740" class="pub-link" target="_blank">DOI: 10.1177/0958305X231177740 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2025</span>
+                    <h4>Supporting police wellbeing through adaptive shift management system: Findings from a co-design study</h4>
+                    <p class="pub-details">Ayorinde, O., Dogan, H., Adedoyin, F., Bitters, F., Dempsey, S., & Jiang, N. (2025). <em>JMIR Formative Research</em>.</p>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2025</span>
+                    <h4>Adoption of telemedicine for dementia care in Nigeria: Scoping review</h4>
+                    <p class="pub-details">Adedeji, A., Dogan, H., Adedoyin, F., & Heward, M. (2025). <em>INTERACTIVE JOURNAL OF MEDICAL RESEARCH</em>, 14.</p>
+                    <a href="https://doi.org/10.2196/75168" class="pub-link" target="_blank">DOI: 10.2196/75168 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2025</span>
+                    <h4>Structural breaks in global stock markets: Are they caused by pandemics, protests or other factors?</h4>
+                    <p class="pub-details">Ndako, J. A., Kumeka, T. T., Adedoyin, F. F., & Asongu, S. A. (2025). <em>Transnational Corporations Review</em>, 17(3).</p>
+                    <a href="https://doi.org/10.1016/j.tncr.2025.200147" class="pub-link" target="_blank">DOI: 10.1016/j.tncr.2025.200147 →</a>
+                </div>
+
+                <div class="publication-item featured-pub">
+                    <span class="pub-year">2024</span>
+                    <h4>Transaction monitoring in anti-money laundering: A qualitative analysis and points of view from industry</h4>
+                    <p class="pub-details">Oztas, B., Cetinkaya, D., Adedoyin, F., Budka, M., Aksu, G., & Dogan, H. (2024). <em>Future Generation Computer Systems</em>, 159, 161-171.</p>
+                    <a href="https://doi.org/10.1016/j.future.2024.05.027" class="pub-link" target="_blank">DOI: 10.1016/j.future.2024.05.027 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>Firm-level pollution and membership of emission trading schemes</h4>
+                    <p class="pub-details">Adamolekun, G., Adedoyin, F. F., & Siganos, A. (2024). <em>Journal of Environmental Management</em>, 351, 119970.</p>
+                    <a href="https://doi.org/10.1016/j.jenvman.2023.119970" class="pub-link" target="_blank">DOI: 10.1016/j.jenvman.2023.119970 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>Analyzing transport demand and environmental degradation: the case of G-7 countries</h4>
+                    <p class="pub-details">Erdogan, S., Sarkodie, S. A., Adedoyin, F. F., Bekun, F. V., & Owusu, P. A. (2024). <em>Environment Development and Sustainability</em>, 26(1), 711-734.</p>
+                    <a href="https://doi.org/10.1007/s10668-022-02729-1" class="pub-link" target="_blank">DOI: 10.1007/s10668-022-02729-1 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>Unlocking the role of biofuel energy consumption and democratic accountability on ecological sustainability in the United States: a quantile-based analysis</h4>
+                    <p class="pub-details">Adebayo, T. S., Adedoyin, F., Somoye, O. A., & Bello, A. A. (2024). <em>Energy Sources Part B Economics Planning and Policy</em>, 19(1).</p>
+                    <a href="https://doi.org/10.1080/15567249.2024.2422521" class="pub-link" target="_blank">DOI: 10.1080/15567249.2024.2422521 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>Investigating the environmental and economic dimensions of household, commercial, and industrial energy intensities in the USA</h4>
+                    <p class="pub-details">Alola, A. A., Adedoyin, F. F., & Alola, U. V. (2024). <em>Carbon Management</em>, 15(1).</p>
+                    <a href="https://doi.org/10.1080/17583004.2024.2349161" class="pub-link" target="_blank">DOI: 10.1080/17583004.2024.2349161 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>Co-designing digital health intervention for monitoring medication and consultation among transgender people in underserved communities: Collaborative approach</h4>
+                    <p class="pub-details">Oluokun, E. O., Adedoyin, F. F., Dogan, H., & Jiang, N. (2024). <em>JMIR Human Factors</em>, 11.</p>
+                    <a href="https://doi.org/10.2196/45826" class="pub-link" target="_blank">DOI: 10.2196/45826 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>Digital interventions for managing medication and health care service delivery in West Africa: Systematic review</h4>
+                    <p class="pub-details">Oluokun, E. O., Adedoyin, F. F., Dogan, H., & Jiang, N. (2024). <em>Journal of Medical Internet Research</em>, 26.</p>
+                    <a href="https://doi.org/10.2196/44294" class="pub-link" target="_blank">DOI: 10.2196/44294 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>Energy policy simulation in times of crisis: Revisiting the impact of renewable and non-renewable energy production on environmental quality in Germany</h4>
+                    <p class="pub-details">Adedoyin, F. F., Erum, N., Taşkin, D., & Chebab, D. (2023). <em>Energy Reports</em>, 9, 4749-4762.</p>
+                    <a href="https://doi.org/10.1016/j.egyr.2023.03.120" class="pub-link" target="_blank">DOI: 10.1016/j.egyr.2023.03.120 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>Developing environmental policy framework for sustainable development in Next-11 countries: the impacts of information and communication technology and urbanisation on the ecological footprint</h4>
+                    <p class="pub-details">Kongbuamai, N., Bui, Q., Adedoyin, F. F., & Bekun, F. V. (2023). <em>Environment Development and Sustainability</em>, 25(10), 11307-11335.</p>
+                    <a href="https://doi.org/10.1007/s10668-022-02528-8" class="pub-link" target="_blank">DOI: 10.1007/s10668-022-02528-8 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>Machine learning applications in renewable energy (MLARE) research: A publication trend and bibliometric analysis study (2012–2021)</h4>
+                    <p class="pub-details">Ajibade, S. S. M., Bekun, F. V., Adedoyin, F. F., Gyamfi, B. A., & Adediran, A. O. (2023). <em>Clean Technologies</em>, 5(2), 497-517.</p>
+                    <a href="https://doi.org/10.3390/cleantechnol5020026" class="pub-link" target="_blank">DOI: 10.3390/cleantechnol5020026 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>The impacts of resource abundance and export diversity on financial development in the South Asian economic bloc</h4>
+                    <p class="pub-details">Gyamfi, B. A., Onifade, S. T., Haouas, I., & Adedoyin, F. F. (2023). <em>Heliyon</em>, 9(4).</p>
+                    <a href="https://doi.org/10.1016/j.heliyon.2023.e15105" class="pub-link" target="_blank">DOI: 10.1016/j.heliyon.2023.e15105 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>Glasgow climate change conference (COP26) and its implications in sub-Sahara Africa economies</h4>
+                    <p class="pub-details">Adedoyin, F. F., Bekun, F. V., Hossain, M. E., Ofori, E. K., Gyamfi, B. A., & Haseki, M. I. (2023). <em>Renewable Energy</em>, 206, 214-222.</p>
+                    <a href="https://doi.org/10.1016/j.renene.2023.02.054" class="pub-link" target="_blank">DOI: 10.1016/j.renene.2023.02.054 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>If tourism induces the EKC hypothesis, how does governance moderate its impact in the EU without the UK?</h4>
+                    <p class="pub-details">Magazzino, C., Adedoyin, F. F., Bilgili, F., & Shahzad, U. (2023). <em>International Journal of Sustainable Development and World Ecology</em>, 30(6), 685-698.</p>
+                    <a href="https://doi.org/10.1080/13504509.2023.2189321" class="pub-link" target="_blank">DOI: 10.1080/13504509.2023.2189321 →</a>
+                </div>
+
+                <div class="publication-item featured-pub">
+                    <span class="pub-year">2022</span>
+                    <h4>A simulation experiment on ICT and patent intensity in South Africa: An application of the novel dynamic ARDL machine learning model</h4>
+                    <p class="pub-details">Adedoyin, F. F., Mavengere, N., & Mutanga, A. (2022). <em>Technological Forecasting and Social Change</em>, 185, 122044.</p>
+                    <a href="https://doi.org/10.1016/j.techfore.2022.122044" class="pub-link" target="_blank">DOI: 10.1016/j.techfore.2022.122044 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>Toward achieving sustainable development agenda: Nexus between agriculture, trade openness, and oil rents in Nigeria</h4>
+                    <p class="pub-details">Adedoyin, F. F., Osundina, O. A., Bekun, F. V., & Asongu, S. A. (2022). <em>Open Agriculture</em>, 7(1), 420-432.</p>
+                    <a href="https://doi.org/10.1515/opag-2022-0111" class="pub-link" target="_blank">DOI: 10.1515/opag-2022-0111 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>Does higher innovation intensity matter for abating the climate crisis in the presence of economic complexities? Evidence from a global panel data</h4>
+                    <p class="pub-details">Adedoyin, F., Erum, N., & Ozturk, I. (2022). <em>Technological Forecasting and Social Change</em>.</p>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>An empirical assessment of electricity consumption and environmental degradation in the presence of economic complexities</h4>
+                    <p class="pub-details">Satrovic, E., & Adedoyin, F. F. (2022). <em>Environmental Science and Pollution Research</em>, 29(52), 78330-78344.</p>
+                    <a href="https://doi.org/10.1007/s11356-022-21099-9" class="pub-link" target="_blank">DOI: 10.1007/s11356-022-21099-9 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>Modelling the nexus between financial development, FDI, and CO2 emission: Does institutional quality matter?</h4>
+                    <p class="pub-details">Adedoyin, F. F., Bekun, F. V., Eluwole, K. K., & Adams, S. (2022). <em>Energies</em>, 15(20).</p>
+                    <a href="https://doi.org/10.3390/en15207464" class="pub-link" target="_blank">DOI: 10.3390/en15207464 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>The effects of environmental degradation on agriculture: Evidence from European countries</h4>
+                    <p class="pub-details">Tan, D., Adedoyin, F. F., Alvarado, R., Ramzan, M., Kayesh, M. S., & Shah, M. I. (2022). <em>Gondwana Research</em>.</p>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2021</span>
+                    <h4>The effect of tourism taxation on international arrivals to a small tourism-dependent economy</h4>
+                    <p class="pub-details">Adedoyin, F. F., Seetaram, N., Disegna, M., & Filis, G. (2021). <em>Journal of Travel Research</em>.</p>
+                    <a href="https://doi.org/10.1177/00472875211053658" class="pub-link" target="_blank">DOI: 10.1177/00472875211053658 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2021</span>
+                    <h4>Renewable and non-renewable energy policy simulations for abating emissions in a complex economy: Evidence from the novel dynamic ARDL</h4>
+                    <p class="pub-details">Adedoyin, F. F., Ozturk, I., Bekun, F. V., Agboola, P. O., & Agboola, M. O. (2021). <em>Renewable Energy</em>, 177, 1408-1420.</p>
+                    <a href="https://doi.org/10.1016/j.renene.2021.06.018" class="pub-link" target="_blank">DOI: 10.1016/j.renene.2021.06.018 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2021</span>
+                    <h4>Environmental consequences of economic complexities in the EU amidst a booming tourism industry: Accounting for the role of brexit and other crisis events</h4>
+                    <p class="pub-details">Adedoyin, F. F., Agboola, P. O., Ozturk, I., Bekun, F. V., & Agboola, M. O. (2021). <em>Journal of Cleaner Production</em>, 305.</p>
+                    <a href="https://doi.org/10.1016/j.jclepro.2021.127117" class="pub-link" target="_blank">DOI: 10.1016/j.jclepro.2021.127117 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2021</span>
+                    <h4>The implications of renewable and non-renewable energy generating in Sub-Saharan Africa: The role of economic policy uncertainties</h4>
+                    <p class="pub-details">Adedoyin, F. F., Ozturk, I., Agboola, M. O., Agboola, P. O., & Bekun, F. V. (2021). <em>Energy Policy</em>, 150.</p>
+                    <a href="https://doi.org/10.1016/j.enpol.2020.112115" class="pub-link" target="_blank">DOI: 10.1016/j.enpol.2020.112115 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2021</span>
+                    <h4>Environmental degradation, energy consumption and sustainable development: Accounting for the role of economic complexities with evidence from World Bank income clusters</h4>
+                    <p class="pub-details">Adedoyin, F. F., Nwulu, N., & Bekun, F. V. (2021). <em>Business Strategy and the Environment</em>, 30, 2727-2740.</p>
+                    <a href="https://doi.org/10.1002/bse.2774" class="pub-link" target="_blank">DOI: 10.1002/bse.2774 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2020</span>
+                    <h4>Energy consumption, economic expansion, and CO2 emission in the UK: The role of economic policy uncertainty</h4>
+                    <p class="pub-details">Adedoyin, F. F., & Zakari, A. (2020). <em>Science of the Total Environment</em>, 738.</p>
+                    <a href="https://doi.org/10.1016/j.scitotenv.2020.140014" class="pub-link" target="_blank">DOI: 10.1016/j.scitotenv.2020.140014 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2020</span>
+                    <h4>Growth impact of transition from non-renewable to renewable energy in the EU: The role of research and development expenditure</h4>
+                    <p class="pub-details">Adedoyin, F. F., Bekun, F. V., & Alola, A. A. (2020). <em>Renewable Energy</em>, 159, 1139-1145.</p>
+                    <a href="https://doi.org/10.1016/j.renene.2020.06.015" class="pub-link" target="_blank">DOI: 10.1016/j.renene.2020.06.015 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2020</span>
+                    <h4>An assessment of environmental sustainability corridor: The role of economic expansion and research and development in EU countries</h4>
+                    <p class="pub-details">Adedoyin, F. F., Alola, A. A., & Bekun, F. V. (2020). <em>Science of the Total Environment</em>, 713.</p>
+                    <a href="https://doi.org/10.1016/j.scitotenv.2020.136726" class="pub-link" target="_blank">DOI: 10.1016/j.scitotenv.2020.136726 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2020</span>
+                    <h4>Modelling coal rent, economic growth and CO2 emissions: Does regulatory quality matter in BRICS economies?</h4>
+                    <p class="pub-details">Adedoyin, F. F., Gumede, M. I., Bekun, F. V., Etokakpan, M. U., & Balsalobre-lorente, D. (2020). <em>Science of the Total Environment</em>, 710.</p>
+                    <a href="https://doi.org/10.1016/j.scitotenv.2019.136284" class="pub-link" target="_blank">DOI: 10.1016/j.scitotenv.2019.136284 →</a>
+                </div>
+                
+                <p class="more-pubs-note">
+                    <em>For a complete list of publications including all co-authored works, please visit my 
+                    <a href="https://staffprofiles.bournemouth.ac.uk/display/fadedoyin" target="_blank">staff profile</a> or 
+                    <a href="https://scholar.google.com" target="_blank">Google Scholar</a>.</em>
+                </p>
+            </div>
+
+            <div class="publication-category" data-category="conferences">
+                <h3>Conference Papers & Proceedings</h3>
+                
+                <div class="publication-item featured-pub">
+                    <span class="pub-year">2025</span>
+                    <h4>Human-centered AI in FinTech: A conceptual model and strategic research agenda</h4>
+                    <p class="pub-details">Adedoyin, F., Dogan, H., Cetinkaya, D., & Jiang, N. (2025). <em>IEEE Conference on Artificial Intelligence (CAI 2025)</em>. Santa Clara, CA, USA.</p>
+                </div>
+                
+                <div class="publication-item featured-pub">
+                    <span class="pub-year">2025</span>
+                    <h4>Tab-AML: A Transformer based transaction monitoring model for anti-money laundering</h4>
+                    <p class="pub-details">Oztas, B., Cetinkaya, D., Adedoyin, F., Budka, M., Aksu, G., & Dogan, H. (2025). <em>IEEE Conference on Artificial Intelligence (CAI 2025)</em>. Santa Clara, CA, USA.</p>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2025</span>
+                    <h4>Design of a wellbeing app for managing complex shift patterns and occupational stress in UK blue light forces</h4>
+                    <p class="pub-details">Ayorinde, O., Dogan, H., Adedoyin, F., Jiang, N., Bitters, F., & Dempley, S. (2025). <em>CCPR Annual Conference 'Enhancing Wellbeing in Policing'</em>. Canterbury, UK.</p>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>Mobile learning technologies as drivers of school enrolment levels in South Africa: A policy simulation experiment using machine learning-driven dynamic autoregressive distributed lag model</h4>
+                    <p class="pub-details">Muazu, F. A., Adedoyin, F., Dogan, H., Whittington, P., & Mavengere, N. (2024). <em>37th International BCS Human Computer Interaction Conference</em>.</p>
+                    <a href="https://doi.org/10.14236/ewic/BCSHCI2024.8" class="pub-link" target="_blank">DOI: 10.14236/ewic/BCSHCI2024.8 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>The use of mobile learning in special education needs and disabilities (SEND) settings: state-of-the-art classification of studies</h4>
+                    <p class="pub-details">Muazu, F., Adedoyin, F., Dogan, H., Mavengere, N., & Whittington, P. (2024). <em>17th International Conference on Pervasive Technologies Related to Assistive Environments</em>. Greece.</p>
+                    <a href="https://doi.org/10.1145/3652037.3663915" class="pub-link" target="_blank">DOI: 10.1145/3652037.3663915 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>Enhancing anti-money laundering: Development of a synthetic transaction monitoring dataset</h4>
+                    <p class="pub-details">Oztas, B., Cetinkaya, D., Adedoyin, F., Budka, M., Dogan, H., & Aksu, G. (2023). <em>IEEE International Conference on E-Business Engineering (ICEBE) 2023</em>. Sydney, Australia.</p>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>Enhancing transaction monitoring controls to detect money laundering using machine learning</h4>
+                    <p class="pub-details">Oztas, B., Cetinkaya, D., Adedoyin, F., & Budka, M. (2022). <em>18th IEEE International Conference on E-Business Engineering (ICEBE)</em>. Bournemouth, UK. <strong>(Best Paper Award)</strong></p>
+                    <a href="https://doi.org/10.1109/ICEBE55470.2022.00014" class="pub-link" target="_blank">DOI: 10.1109/ICEBE55470.2022.00014 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>Education inequality in underserved regions: Exploring the role of technology to promote diversity and inclusivity</h4>
+                    <p class="pub-details">Mavengere, N., Edifor, E. E., Adedoyin, F., Apeh, E., & Owusu, A. (2022). <em>2022 IEEE International Conference on e-Business Engineering (ICEBE)</em>. Bournemouth UK.</p>
+                    <a href="https://doi.org/10.1109/ICEBE55470.2022.00057" class="pub-link" target="_blank">DOI: 10.1109/ICEBE55470.2022.00057 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2021</span>
+                    <h4>Data-driven business analytics for the tourism industry in the UK: A machine learning experiment post-COVID</h4>
+                    <p class="pub-details">Adedoyin, F. (2021). <em>2021 IEEE 23rd Conference on Business Informatics (CBI)</em>. Bolzano, Italy.</p>
+                    <a href="https://doi.org/10.1109/CBI52690.2021.10058" class="pub-link" target="_blank">DOI: 10.1109/CBI52690.2021.10058 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2021</span>
+                    <h4>An artificial recurrent neural network experiment on the future of digital innovation and sustainable economic development in the OECD</h4>
+                    <p class="pub-details">Adedoyin, F. (2021). <em>2021 IEEE International Conference on Technology and Entrepreneurship (ICTE)</em>. IEEE TEMS and Kaunas University of Technology.</p>
+                </div>
+            </div>
+
+            <div class="publication-category" data-category="chapters">
+                <h3>Book Chapters</h3>
+
+                <div class="publication-item">
+                    <span class="pub-year">2025</span>
+                    <h4>Introduction: Rethinking energy policy in the digital age</h4>
+                    <p class="pub-details">Adedoyin, F. (2025). In <em>Simulation and Machine Learning Models for Energy Policy Design</em> (pp. 1-18).</p>
+                    <a href="https://doi.org/10.1016/B978-0-443-33971-4.00001-5" class="pub-link" target="_blank">DOI: 10.1016/B978-0-443-33971-4.00001-5 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2025</span>
+                    <h4>Ethical and regulatory dimensions of energy policy models</h4>
+                    <p class="pub-details">Adedoyin, F., & Olukade, F. (2025). In <em>Simulation and Machine Learning Models for Energy Policy Design</em> (pp. 19-40).</p>
+                    <a href="https://doi.org/10.1016/B978-0-443-33971-4.00002-7" class="pub-link" target="_blank">DOI: 10.1016/B978-0-443-33971-4.00002-7 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2025</span>
+                    <h4>A machine learning-based simulation experiment on the impact of transportation energy consumption on carbon emissions in the United Kingdom</h4>
+                    <p class="pub-details">Samuel, I., & Adedoyin, F. F. (2025). In <em>Simulation and Machine Learning Models for Energy Policy Design</em> (pp. 193-207).</p>
+                    <a href="https://doi.org/10.1016/B978-0-443-33971-4.00007-6" class="pub-link" target="_blank">DOI: 10.1016/B978-0-443-33971-4.00007-6 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2025</span>
+                    <h4>Simulating energy systems: Case studies of food waste management and environmental degradation in the USA</h4>
+                    <p class="pub-details">Otame, L., Aladesanmi, K., Ogunbiyi, V., & Adedoyin, F. (2025). In <em>Simulation and Machine Learning Models for Energy Policy Design</em>.</p>
+                    <a href="https://doi.org/10.1016/B978-0-443-33971-4.00006-4" class="pub-link" target="_blank">DOI: 10.1016/B978-0-443-33971-4.00006-4 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2025</span>
+                    <h4>Digital competence and operational performance in agile organisations</h4>
+                    <p class="pub-details">Adedoyin, F. (2025). In <em>Digital Competence in Agile and Hierarchical Organizations</em> (pp. 1-16).</p>
+                    <a href="https://doi.org/10.4324/9781003535416-1" class="pub-link" target="_blank">DOI: 10.4324/9781003535416-1 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>A policy simulation experiment on innovations and OpenAI-driven labour force-growth nexus</h4>
+                    <p class="pub-details">Adedoyin, F. F., Ogunbiyi, V. O., Adebiyi, A., & Oluokun, E. (2024). In <em>Generative AI and Multifactor Productivity in Business</em> (pp. 102-132).</p>
+                    <a href="https://doi.org/10.4018/979-8-3693-1198-1.ch006" class="pub-link" target="_blank">DOI: 10.4018/979-8-3693-1198-1.ch006 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <h4>Do digital images tell the truth?</h4>
+                    <p class="pub-details">Bruno, A., Oza, P., Adedoyin, F., et al. (2024). In <em>Digital Image Security Techniques and Applications</em> (pp. 247-265).</p>
+                    <a href="https://doi.org/10.1201/9781003468974-12" class="pub-link" target="_blank">DOI: 10.1201/9781003468974-12 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>Information security threats in the Internet of Things (IoT): A case study of automatic number plate recognition (ANPR) cameras</h4>
+                    <p class="pub-details">Gravenor, N., & Adedoyin, F. (2023). In <em>Handbook of Research on Cybersecurity Risk in Contemporary Business Systems</em> (pp. 291-304).</p>
+                    <a href="https://doi.org/10.4018/978-1-6684-7207-1.ch015" class="pub-link" target="_blank">DOI: 10.4018/978-1-6684-7207-1.ch015 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>Information security threats of automation in the water industry: An exploratory study of England and Wales</h4>
+                    <p class="pub-details">Taylor, J., & Adedoyin, F. (2023). In <em>Effective Cybersecurity Operations for Enterprise Wide Systems</em> (pp. 208-220).</p>
+                    <a href="https://doi.org/10.4018/978-1-6684-9018-1.ch010" class="pub-link" target="_blank">DOI: 10.4018/978-1-6684-9018-1.ch010 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2023</span>
+                    <h4>Policies related to renewable energy-water-environment nexus</h4>
+                    <p class="pub-details">Adedoyin, F. F. (2023). In <em>Renewable Energy Water Environment Nexus Fundamentals Technology and Policy</em> (pp. 423-439).</p>
+                    <a href="https://doi.org/10.1016/B978-0-443-13439-5.00013-2" class="pub-link" target="_blank">DOI: 10.1016/B978-0-443-13439-5.00013-2 →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>Tourism-induced environmental Kuznets curve</h4>
+                    <p class="pub-details">Adedoyin, F. (2022). In D. Buhalis (Ed.), <em>Encyclopedia of Tourism Management and Marketing</em>. Edward Elgar Publishing.</p>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>Taxation</h4>
+                    <p class="pub-details">Seetaram, N., & Adedoyin, F. F. (2022). In <em>Encyclopedia of Tourism Management and Marketing</em> (Vol. 4, pp. 329-331).</p>
+                    <a href="https://doi.org/10.4337/9781800377486.taxation" class="pub-link" target="_blank">DOI: 10.4337/9781800377486.taxation →</a>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2022</span>
+                    <h4>Global sustainability in the presence of green technology transfer</h4>
+                    <p class="pub-details">Adedoyin, F. (2022). In <em>The Palgrave Handbook of Global Sustainability</em>. Palgrave Macmillan.</p>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2020</span>
+                    <h4>The impact of passenger taxes</h4>
+                    <p class="pub-details">Seetaram, N., Adedoyin, F., & Ye, S. (2020). In <em>Air Transport and Regional Development Policies</em>. Taylor & Francis Group.</p>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-year">2020</span>
+                    <h4>The validation of the tourism-led growth hypothesis in the next leading economies: Accounting for the relevant role of education on carbon emissions reduction</h4>
+                    <p class="pub-details">Bekun, F. V., Adedoyin, F., Balsalobre-lorente, D., & Driha, O. (2020). In <em>Strategies in Sustainable Tourism, Economic Growth, and Clean Energy</em>. Springer Nature.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Dr Festus Adedoyin</h3>
+                    <p>Senior Lecturer in Computer Science | Bournemouth University</p>
+                    <p>Specialising in Machine Learning, FinTech AI, Anti-Money Laundering, Digital Health & Maritime Analytics</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Connect & Research Profiles</h4>
+                    <div class="footer-links">
+                        <a href="https://www.linkedin.com/in/festus-adedoyin-phd-064b5047/" target="_blank" rel="noopener" class="footer-link linkedin">
+                            <span>🔗</span> LinkedIn
+                        </a>
+                        <a href="https://orcid.org/0000-0002-3586-2570" target="_blank" rel="noopener" class="footer-link orcid">
+                            <span>📖</span> ORCID
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr Festus Adedoyin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        ↑
+    </button>
+
+    <script src="main.js"></script>
+    
+    <script type="text/javascript">
+        function translatePage() {
+            var lang = document.getElementById('language-selector').value;
+            if (lang && lang !== 'en') {
+                var translateUrl = 'https://translate.google.com/translate?sl=auto&tl=' + lang + '&u=' + encodeURIComponent(window.location.href);
+                window.location.href = translateUrl;
+            }
+        }
+    </script>
+</body>
+</html>

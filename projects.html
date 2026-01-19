@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Science & AI Projects by Dr Festus Adedoyin - FinTech AML, Digital Health, Maritime Analytics, Machine Learning Applications">
+    <meta name="keywords" content="AI Projects, Machine Learning, FinTech, Anti-Money Laundering, Digital Health, Maritime Analytics, Transformer Models">
+    <title>AI Projects - Dr Festus Adedoyin</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand"><a href="index.html">Dr Festus Adedoyin</a></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">AI Projects</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">
+                            <span class="dark-icon">🌙</span>
+                            <span class="light-icon">☀️</span>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <select id="language-selector" class="language-selector" onchange="translatePage()">
+                        <option value="">🌐 Language</option>
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="zh-CN">中文</option>
+                        <option value="ar">العربية</option>
+                        <option value="pt">Português</option>
+                        <option value="es">Español</option>
+                        <option value="sw">Kiswahili</option>
+                        <option value="yo">Yorùbá</option>
+                        <option value="ha">Hausa</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Data Science & AI Projects</h1>
+            <p>Industry-facing applications • Real-world impact • Cutting-edge machine learning</p>
+        </div>
+    </section>
+
+    <!-- Data Science & AI Projects Section -->
+    <section class="projects">
+        <div class="container">
+            
+            <p class="section-intro">
+                My research portfolio encompasses industry-facing AI applications addressing real-world challenges in financial services, 
+                healthcare, and maritime operations. These projects combine state-of-the-art machine learning techniques with domain-specific 
+                knowledge, delivering actionable insights for industry partners and policy makers.
+            </p>
+
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="project-badge">FinTech AI</div>
+                    <h3>Transformer-Based Anti-Money Laundering (AML)</h3>
+                    <p class="project-description">
+                        Developed <strong>Tab-AML</strong>, a novel Transformer-based architecture for transaction monitoring in financial 
+                        crime detection. This deep learning system processes sequential transaction data to identify suspicious patterns 
+                        indicative of money laundering activities, achieving superior performance over traditional rule-based systems.
+                    </p>
+                    <ul class="tech-stack">
+                        <li>Transformer Neural Networks</li>
+                        <li>Sequential Pattern Recognition</li>
+                        <li>Synthetic Data Generation</li>
+                        <li>Financial Crime Analytics</li>
+                    </ul>
+                    <div class="project-outcomes">
+                        <strong>Key Outputs:</strong> IEEE CAI 2025 publication, industry collaboration with financial institutions, 
+                        synthetic AML dataset for research community
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-badge">Digital Health</div>
+                    <h3>AI for Police Health & Well-being Interventions</h3>
+                    <p class="project-description">
+                        Leading a PhD project (funded studentship) in partnership with <strong>Hampshire and Isle of Wight Constabulary</strong> 
+                        to develop digital health interventions for managing physical and mental well-being of blue light emergency responders. 
+                        The project employs machine learning for predictive health analytics and personalised intervention design.
+                    </p>
+                    <ul class="tech-stack">
+                        <li>Predictive Health Analytics</li>
+                        <li>Intervention Design</li>
+                        <li>Well-being Metrics</li>
+                        <li>Human-Computer Interaction</li>
+                    </ul>
+                    <div class="project-outcomes">
+                        <strong>Impact:</strong> Direct deployment in UK policing, evidence-based policy recommendations for emergency services
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-badge">Maritime Analytics</div>
+                    <h3>AI-Driven Vessel Performance Optimisation</h3>
+                    <p class="project-description">
+                        Supervising a PhD studentship with <strong>Clearwater Dynamics</strong> focused on predictive analytics for enhanced 
+                        vessel operational efficiency. The project applies machine learning to maritime sensor data, fuel consumption patterns, 
+                        and environmental variables to optimise routing, maintenance scheduling, and overall fleet performance.
+                    </p>
+                    <ul class="tech-stack">
+                        <li>Time-Series Forecasting</li>
+                        <li>IoT Sensor Analytics</li>
+                        <li>Operational Efficiency Modelling</li>
+                        <li>Predictive Maintenance</li>
+                    </ul>
+                    <div class="project-outcomes">
+                        <strong>Application:</strong> Real-time decision support for maritime operators, emissions reduction strategies
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-badge">Health Tech</div>
+                    <h3>Knowledge Transfer Partnership: AI in Care Sector</h3>
+                    <p class="project-description">
+                        Co-leading a <strong>£250,000 UKVI Knowledge Transfer Partnership</strong> between Bournemouth University and 
+                        <strong>Nourish Care Limited</strong>, deploying AI and data science solutions to improve care delivery, operational 
+                        efficiency, and resident outcomes in the UK health and social care sector.
+                    </p>
+                    <ul class="tech-stack">
+                        <li>Healthcare Data Analytics</li>
+                        <li>Process Optimisation</li>
+                        <li>Quality Assurance Systems</li>
+                        <li>Industry Knowledge Transfer</li>
+                    </ul>
+                    <div class="project-outcomes">
+                        <strong>Funding:</strong> £250,000 UKVI KTP (Awarded 2025), sector-wide impact potential
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-badge">Economic Modelling</div>
+                    <h3>Dynamic ARDL Machine Learning for Policy Design</h3>
+                    <p class="project-description">
+                        Applied novel dynamic Autoregressive Distributed Lag (ARDL) machine learning models to simulate the impact of ICT 
+                        infrastructure on patent intensity and innovation capacity in South Africa. This work demonstrates the application 
+                        of advanced econometric techniques to evidence-based policy design for technology-driven economic development.
+                    </p>
+                    <ul class="tech-stack">
+                        <li>ARDL Econometric Modelling</li>
+                        <li>Time-Series Analysis</li>
+                        <li>Policy Simulation</li>
+                        <li>Economic Forecasting</li>
+                    </ul>
+                    <div class="project-outcomes">
+                        <strong>Publication:</strong> <em>Technological Forecasting and Social Change</em> (Elsevier, 2022)
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-badge">AI Ethics</div>
+                    <h3>Human-Centred AI in FinTech</h3>
+                    <p class="project-description">
+                        Developing a conceptual framework and strategic research agenda for human-centred AI design in financial technology 
+                        applications. This work addresses ethical considerations, explainability requirements, and user trust in AI-driven 
+                        financial services, with implications for regulatory compliance and responsible AI deployment.
+                    </p>
+                    <ul class="tech-stack">
+                        <li>Explainable AI (XAI)</li>
+                        <li>AI Ethics & Governance</li>
+                        <li>User-Centred Design</li>
+                        <li>Regulatory Compliance</li>
+                    </ul>
+                    <div class="project-outcomes">
+                        <strong>Recognition:</strong> IEEE CAI 2025, informing FinTech industry best practices
+                    </div>
+                </div>
+            </div>
+
+            <div class="collaboration-note">
+                <h3>Industry Collaboration & PhD Opportunities</h3>
+                <p>
+                    I actively seek partnerships with industry, government agencies, and research institutions. My projects demonstrate 
+                    a track record of securing competitive funding and delivering practical impact. I am currently accepting PhD enquiries 
+                    in machine learning, FinTech AI, digital health, maritime analytics, and applied data science. Prospective students with 
+                    strong quantitative backgrounds (computer science, mathematics, economics, engineering) are encouraged to make contact.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Dr Festus Adedoyin</h3>
+                    <p>Senior Lecturer in Computer Science | Bournemouth University</p>
+                    <p>Specialising in Machine Learning, FinTech AI, Anti-Money Laundering, Digital Health & Maritime Analytics</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Connect & Research Profiles</h4>
+                    <div class="footer-links">
+                        <a href="https://www.linkedin.com/in/festus-adedoyin-phd-064b5047/" target="_blank" rel="noopener" class="footer-link linkedin">
+                            <span>🔗</span> LinkedIn
+                        </a>
+                        <a href="https://orcid.org/0000-0002-3586-2570" target="_blank" rel="noopener" class="footer-link orcid">
+                            <span>📖</span> ORCID
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr Festus Adedoyin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        ↑
+    </button>
+
+    <script src="main.js"></script>
+    
+    <script type="text/javascript">
+        function translatePage() {
+            var lang = document.getElementById('language-selector').value;
+            if (lang && lang !== 'en') {
+                var translateUrl = 'https://translate.google.com/translate?sl=auto&tl=' + lang + '&u=' + encodeURIComponent(window.location.href);
+                window.location.href = translateUrl;
+            }
+        }
+    </script>
+</body>
+</html>
