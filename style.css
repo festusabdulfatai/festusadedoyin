@@ -109,6 +109,151 @@ body {
     animation: fadeIn 0.3s ease-in;
 }
 
+/* ===================================
+   Design Refresh (unified cards, grids, buttons)
+   Improves spacing, alignment and modern visuals across pages
+   =================================== */
+
+:root {
+    --card-bg: var(--bg-white);
+    --card-radius: 16px;
+    --card-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    --card-hover-shadow: 0 22px 50px rgba(15, 23, 42, 0.10);
+    --min-card-width: 280px;
+}
+
+/* Base card style applied to main content boxes */
+.project-card,
+.teaching-card,
+.grant-card,
+.publication-item,
+.publication-highlight,
+.contact-card,
+.contact-item,
+.award-card,
+.badge-item,
+.completed-card,
+.phd-card,
+.timeline-content,
+.news-card,
+.video-card,
+.gallery-item,
+.lightbox-content,
+.cv-download-section,
+.social-badges,
+.publication-highlight {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: 1.75rem;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: 1px solid var(--border-colour);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card .project-badge,
+.grant-card .grant-badge,
+.badge-item .badge-name {
+    align-self: flex-start;
+}
+
+.project-card:hover,
+.teaching-card:hover,
+.grant-card:hover,
+.publication-item:hover,
+.award-card:hover,
+.news-card:hover,
+.video-card:hover,
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* Ensure card content stretches so CTA/footer align */
+.project-card > *,
+.grant-card > *,
+.publication-item > *,
+.award-card > *,
+.news-card > *,
+.video-card > * {
+    flex: 0 0 auto;
+}
+
+/* Utility grid with consistent gaps and responsive sizing */
+.grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-card-width), 1fr));
+    gap: 2rem;
+}
+
+/* Apply consistent grid rules to common lists */
+.projects-grid,
+.grants-grid,
+.highlights-grid,
+.news-grid,
+.videos-grid,
+.publications-showcase,
+.gallery-grid,
+.badges-grid,
+.phd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-card-width), 1fr));
+    gap: 2rem;
+}
+
+/* Streamline button visuals */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-download {
+    border-radius: 12px;
+    padding: 12px 28px;
+    box-shadow: 0 8px 24px rgba(59,130,246,0.08);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-dark);
+    border: 2px solid rgba(15,23,42,0.06);
+}
+
+.btn-primary:hover,
+.btn-download:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* Tighten spacing on small screens */
+@media (max-width: 768px) {
+    :root { --min-card-width: 220px; }
+    .container { padding: 0 18px; }
+    .section-title { font-size: 2.25rem; }
+}
+
+/* subtle entrance for cards */
+.project-card,
+.grant-card,
+.publication-item,
+.award-card,
+.news-card,
+.video-card {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: cardFadeIn 0.6s ease forwards;
+}
+
+@keyframes cardFadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
 .hero,
 .stats,
 .research-impact,
