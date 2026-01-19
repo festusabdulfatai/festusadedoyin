@@ -34,41 +34,7 @@
     --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dark Mode Colour Variables */
-[data-theme="dark"] {
-    --primary-colour: #f8fafc;
-    --secondary-colour: #e2e8f0;
-    --accent-colour: #60a5fa;
-    --accent-light: #93c5fd;
-    --text-dark: #f8fafc;
-    --text-light: #cbd5e1;
-    --text-muted: #94a3b8;
-    --bg-light: #0f172a;
-    --bg-grey: #1e293b;
-    --bg-white: #1e293b;
-    --border-colour: #334155;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
-}
-
-[data-theme="dark"] .navbar {
-    background: rgba(15, 23, 42, 0.9);
-    border-bottom: 1px solid rgba(51, 65, 85, 0.8);
-}
-
-[data-theme="dark"] .navbar.scrolled {
-    background: rgba(15, 23, 42, 0.95);
-}
-
-[data-theme="dark"] .hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-}
-
-[data-theme="dark"] .page-header {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-}
+/* Dark mode CSS removed */
 
 html {
     scroll-behavior: smooth;

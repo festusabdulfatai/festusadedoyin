@@ -1,19 +1,5 @@
-// ============================================
-// Dark Mode Toggle Functionality
-// ============================================
-
-// Check for saved theme preference or default to 'light' mode
-const currentTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', currentTheme);
-
-// Toggle theme function
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-}
+// Dark mode functionality removed
 
 // ============================================
 // Mobile Menu Toggle
