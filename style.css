@@ -3871,3 +3871,46 @@ footer {
         page-break-inside: avoid;
     }
 }
+
+/* Accessibility: ensure readable text on light backgrounds
+   Protect common "card" and light-surface components from white-on-white
+*/
+.project-card,
+.teaching-card,
+.grant-card,
+.publication-item,
+.publication-highlight,
+.publication-outcomes,
+.stat-card,
+.contact-card,
+.contact-item,
+.award-card,
+.badge-item,
+.completed-card,
+.phd-card,
+.timeline-content,
+.timeline-item,
+.gallery-item-overlay,
+.lightbox-caption,
+.cta-content,
+.cv-download-section,
+.social-badges,
+.news-card,
+.video-card {
+    color: var(--text-dark) !important;
+}
+
+/* Make common text elements inherit the safer color when inside these containers */
+.project-card h3,
+.project-card p,
+.publication-item h4,
+.publication-item p,
+.grant-card h4,
+.grant-card p,
+.contact-card h3,
+.contact-card p,
+.badge-item .badge-name,
+.news-card h3,
+.video-info h3 {
+    color: inherit !important;
+}
