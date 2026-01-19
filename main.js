@@ -33,8 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ...existing code...
-document.documentElement.setAttribute('data-theme', currentTheme);
-// Dark mode functionality removed
+});
 
 // ============================================
 // Mobile Menu Toggle
@@ -43,7 +42,6 @@ document.documentElement.setAttribute('data-theme', currentTheme);
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    const themeToggle = document.querySelector('.theme-toggle');
 
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
@@ -60,10 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Theme toggle button event
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
+    // Theme toggle removed
 
     // Navbar background on scroll
     window.addEventListener('scroll', () => {
