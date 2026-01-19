@@ -273,16 +273,9 @@ section {
     border-color: var(--primary);
 }
 
-[data-theme="dark"] .language-selector {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    border-color: rgba(255, 255, 255, 0.2);
-}
+[/* dark-theme rule removed */]
 
-[data-theme="dark"] .language-selector:hover {
-    border-color: var(--accent-colour);
-    background: rgba(255, 255, 255, 0.1);
-}
+[/* dark-theme rule removed */]
 
 /* Google Translate Widget Styling */
 .translate-widget {
@@ -304,10 +297,7 @@ section {
     border-color: var(--accent-colour);
 }
 
-[data-theme="dark"] .translate-widget select {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-}
+[/* dark-theme rule removed */]
 
 /* Hide Google Translate branding */
 .goog-te-banner-frame.skiptranslate,
@@ -913,9 +903,7 @@ body {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
-[data-theme="dark"] .research-impact {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-}
+[/* dark-theme rule removed */]
 
 .section-subtitle {
     text-align: center;
@@ -941,19 +929,14 @@ body {
     transition: all 0.3s ease;
 }
 
-[data-theme="dark"] .impact-card {
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
+[/* dark-theme rule removed */]
 
 .impact-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-[data-theme="dark"] .impact-card:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-}
+[/* dark-theme rule removed */]
 
 .impact-icon {
     font-size: 2.5rem;
@@ -998,10 +981,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-[data-theme="dark"] .impact-highlight-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-left-color: #a855f7;
-}
+[/* dark-theme rule removed */]
 
 .impact-highlight-item .highlight-badge {
     display: inline-block;
@@ -1048,9 +1028,7 @@ body {
     background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
 }
 
-[data-theme="dark"] .testimonials {
-    background: linear-gradient(135deg, #422006 0%, #78350f 100%);
-}
+[/* dark-theme rule removed */]
 
 .testimonials-grid {
     display: grid;
@@ -1068,19 +1046,14 @@ body {
     transition: all 0.3s ease;
 }
 
-[data-theme="dark"] .testimonial-card {
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
+[/* dark-theme rule removed */]
 
 .testimonial-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
-[data-theme="dark"] .testimonial-card:hover {
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
-}
+[/* dark-theme rule removed */]
 
 .testimonial-quote {
     font-size: 4rem;
@@ -1107,9 +1080,7 @@ body {
     border-top: 2px solid rgba(251, 191, 36, 0.2);
 }
 
-[data-theme="dark"] .testimonial-author {
-    border-top-color: rgba(251, 191, 36, 0.3);
-}
+[/* dark-theme rule removed */]
 
 .author-avatar {
     width: 50px;
@@ -1629,9 +1600,7 @@ body {
     background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
 }
 
-[data-theme="dark"] .awards-section {
-    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-}
+[/* dark-theme rule removed */]
 
 .awards-grid {
     display: grid;
@@ -1651,10 +1620,7 @@ body {
     overflow: hidden;
 }
 
-[data-theme="dark"] .award-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
-}
+[/* dark-theme rule removed */]
 
 .award-card::before {
     content: '';
@@ -1681,9 +1647,7 @@ body {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-[data-theme="dark"] .award-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
-}
+[/* dark-theme rule removed */]
 
 .award-year {
     display: inline-block;
@@ -1696,10 +1660,7 @@ body {
     margin-bottom: 1rem;
 }
 
-[data-theme="dark"] .award-year {
-    background: rgba(168, 85, 247, 0.2);
-    color: #a855f7;
-}
+[/* dark-theme rule removed */]
 
 .award-badge {
     font-size: 2rem;
@@ -1736,9 +1697,7 @@ body {
     border-top: 2px solid rgba(102, 126, 234, 0.2);
 }
 
-[data-theme="dark"] .recognition-notes {
-    border-top-color: rgba(168, 85, 247, 0.3);
-}
+[/* dark-theme rule removed */]
 
 .recognition-item {
     background: white;
@@ -1749,10 +1708,7 @@ body {
     line-height: 1.6;
 }
 
-[data-theme="dark"] .recognition-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-left-color: #a855f7;
-}
+[/* dark-theme rule removed */]
 
 .recognition-item strong {
     color: var(--text-dark);
@@ -1775,9 +1731,7 @@ body {
     background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
 }
 
-[data-theme="dark"] .professional-experience {
-    background: linear-gradient(135deg, #164e63 0%, #0e7490 100%);
-}
+[/* dark-theme rule removed */]
 
 .experience-timeline {
     max-width: 900px;
@@ -1795,9 +1749,7 @@ body {
     background: linear-gradient(180deg, #06b6d4 0%, #0891b2 100%);
 }
 
-[data-theme="dark"] .experience-timeline::before {
-    background: linear-gradient(180deg, #22d3ee 0%, #06b6d4 100%);
-}
+[/* dark-theme rule removed */]
 
 .experience-item {
     position: relative;
@@ -1825,11 +1777,7 @@ body {
     z-index: 1;
 }
 
-[data-theme="dark"] .experience-item::before {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #22d3ee;
-    color: #22d3ee;
-}
+[/* dark-theme rule removed */]
 
 .experience-header {
     display: flex;
@@ -1849,10 +1797,7 @@ body {
     font-weight: 600;
 }
 
-[data-theme="dark"] .experience-period {
-    background: rgba(34, 211, 238, 0.2);
-    color: #22d3ee;
-}
+[/* dark-theme rule removed */]
 
 .experience-location {
     font-size: 0.95rem;
@@ -1874,9 +1819,7 @@ body {
     margin-bottom: 1rem;
 }
 
-[data-theme="dark"] .experience-org {
-    color: #22d3ee;
-}
+[/* dark-theme rule removed */]
 
 .experience-responsibilities {
     list-style: none;
@@ -1899,9 +1842,7 @@ body {
     font-weight: bold;
 }
 
-[data-theme="dark"] .experience-responsibilities li::before {
-    color: #22d3ee;
-}
+[/* dark-theme rule removed */]
 
 @media (max-width: 768px) {
     .experience-timeline::before {
@@ -3491,14 +3432,9 @@ footer .social-link:hover {
     transform: translateY(-2px);
 }
 
-[data-theme="dark"] .scroll-to-top {
-    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
-}
+[/* dark-theme rule removed */]
 
-[data-theme="dark"] .scroll-to-top:hover {
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.6);
-}
+[/* dark-theme rule removed */]
 
 footer {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -3507,9 +3443,7 @@ footer {
     margin-top: 4rem;
 }
 
-[data-theme="dark"] footer {
-    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
-}
+[/* dark-theme rule removed */]
 
 .footer-content {
     display: grid;
@@ -3907,197 +3841,7 @@ footer {
 
 /* Upcoming Events styles removed */
 
-/* ============================================
-   Student Success Stories Section
-   ============================================ */
-
-.success-stories {
-    padding: 6rem 0;
-    background: var(--bg-primary);
-}
-
-.success-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
-
-.success-card {
-    background: var(--bg-white);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    border-top: 5px solid var(--primary);
-}
-
-.success-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.success-header {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--bg-secondary);
-}
-
-.graduate-avatar {
-    font-size: 3rem;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.graduate-info h3 {
-    font-size: 1.4rem;
-    color: var(--text-primary);
-    margin-bottom: 0.3rem;
-}
-
-.graduation-year {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-weight: 600;
-}
-
-.thesis-title {
-    padding: 1rem;
-    background: rgba(59, 130, 246, 0.05);
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-}
-
-.current-role {
-    margin-bottom: 1.5rem;
-}
-
-.role-badge {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    background: var(--success);
-    color: white;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.role-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.3rem;
-}
-
-.role-company {
-    font-size: 1rem;
-    color: var(--primary);
-    font-weight: 600;
-}
-
-.success-quote {
-    font-style: italic;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    padding: 1rem;
-    background: var(--bg-secondary);
-    border-left: 3px solid var(--primary);
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.achievements {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.achievement-tag {
-    padding: 0.4rem 0.9rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.supervision-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-    padding: 3rem;
-    background: var(--bg-white);
-    border-radius: 16px;
-}
-
-.supervision-stats .stat-card {
-    text-align: center;
-}
-
-.supervision-stats .stat-number {
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.supervision-stats .stat-label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
-
-.stat-note {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin: 0;
-}
-
-.phd-cta {
-    text-align: center;
-    margin-top: 4rem;
-    padding: 3rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    border-radius: 16px;
-}
-
-.phd-cta h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.phd-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-}
-
-.phd-cta .btn {
-    background: white;
-    color: var(--primary);
-}
-
-.phd-cta .btn:hover {
-    background: var(--bg-secondary);
-    transform: translateY(-2px);
-}
+/* Student Success Stories styles removed */
 
 @media (max-width: 768px) {
     .news-card.featured {
