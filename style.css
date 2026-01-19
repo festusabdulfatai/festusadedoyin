@@ -85,100 +85,66 @@ section {
    Page Loading Animations
    =================================== */
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.testimonials {
+    padding: 6rem 0 4rem;
+    background: var(--bg-light);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.testimonials .section-title {
+    color: var(--text-dark);
 }
 
-body {
-    animation: fadeIn 0.3s ease-in;
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+    align-items: start;
 }
 
-/* ===================================
-   Design Refresh (unified cards, grids, buttons)
-   Improves spacing, alignment and modern visuals across pages
-   =================================== */
-
-:root {
-    --card-bg: var(--bg-white);
-    --card-radius: 16px;
-    --card-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-    --card-hover-shadow: 0 22px 50px rgba(15, 23, 42, 0.10);
-    --min-card-width: 280px;
-}
-
-/* Base card style applied to main content boxes */
-.project-card,
-.teaching-card,
-.grant-card,
-.publication-item,
-.publication-highlight,
-.contact-card,
-.contact-item,
-.award-card,
-.badge-item,
-.completed-card,
-.phd-card,
-.timeline-content,
-.news-card,
-.video-card,
-.gallery-item,
-.lightbox-content,
-.cv-download-section,
-.social-badges,
-.publication-highlight {
+.testimonial-card {
     background: var(--card-bg);
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow);
     padding: 1.75rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-    border: 1px solid var(--border-colour);
+    min-height: 180px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-.project-card .project-badge,
-.grant-card .grant-badge,
-.badge-item .badge-name {
-    align-self: flex-start;
+.testimonial-card:hover { transform: translateY(-6px); box-shadow: var(--card-hover-shadow); }
+
+.testimonial-quote {
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--accent-colour);
+    opacity: 0.95;
+    margin-bottom: 0.5rem;
 }
 
-.project-card:hover,
-.teaching-card:hover,
-.grant-card:hover,
-.publication-item:hover,
-.award-card:hover,
-.news-card:hover,
-.video-card:hover,
-.gallery-item:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--card-hover-shadow);
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-style: italic;
 }
 
-/* Ensure card content stretches so CTA/footer align */
-.project-card > *,
-.grant-card > *,
-.publication-item > *,
-.award-card > *,
-.news-card > *,
-.video-card > * {
-    flex: 0 0 auto;
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(15,23,42,0.04);
 }
+
+.author-avatar { width: 48px; height: 48px; font-size: 1.25rem; }
+
+.author-name { font-weight: 700; color: var(--text-dark); }
+
+.author-role { font-size: 0.9rem; color: var(--text-light); }
 
 /* Utility grid with consistent gaps and responsive sizing */
 .grid-responsive {
@@ -2209,17 +2175,14 @@ body {
    =================================== */
 
 footer {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: rgba(255, 255, 255, 0.9);
-    padding: 3rem 0;
-    text-align: center;
-    border-top: 4px solid var(--accent-colour);
+    background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+    color: #cbd5e1;
+    padding: 4rem 0 2.5rem;
+    text-align: left;
+    border-top: 6px solid rgba(59,130,246,0.12);
 }
 
-footer p {
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
-}
+footer p { margin-bottom: 0.5rem; font-size: 1rem; color: #cbd5e1; }
 
 /* ===================================
    Responsive Design
@@ -3592,9 +3555,10 @@ footer {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 2.5rem;
     margin-bottom: 2rem;
+    align-items: start;
 }
 
 @media (max-width: 968px) {
@@ -3610,19 +3574,15 @@ footer {
     }
 }
 
+
 .footer-about h3 {
     color: #fff;
     font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    font-weight: 700;
+    margin-bottom: 0.6rem;
+    font-weight: 800;
 }
 
-.footer-about p {
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
-}
+.footer-about p { color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.6rem; }
 
 .footer-tagline {
     margin-top: 1rem;
@@ -3674,26 +3634,21 @@ footer {
     gap: 0.8rem;
 }
 
+
 .footer-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.7rem 1.2rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    color: #e2e8f0;
+    padding: 0.5rem 0;
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    font-size: 0.95rem;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.footer-link:hover {
-    transform: translateX(5px);
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-}
+.footer-link:hover { color: #fff; transform: translateX(4px); }
 
 .footer-link.linkedin:hover {
     background: rgba(10, 102, 194, 0.2);
@@ -3725,16 +3680,15 @@ footer {
     color: #fff;
 }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
 
-.footer-bottom p {
-    color: #94a3b8;
-    font-size: 0.9rem;
-    margin: 0.3rem 0;
+.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.04); }
+
+.footer-bottom p { color: #94a3b8; font-size: 0.9rem; margin: 0.3rem 0; }
+
+@media (max-width: 768px) {
+    footer { text-align: center; }
+    .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
+    .footer-about p { margin: 0 auto; max-width: 520px; }
 }
 
 /* ============================================
