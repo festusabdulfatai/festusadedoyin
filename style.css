@@ -306,6 +306,69 @@ section {
     .projects-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 }
 
+/* Icon styles for cards */
+.card-icon {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(139,92,246,0.08));
+    box-shadow: 0 6px 18px rgba(59,130,246,0.06);
+    flex-shrink: 0;
+}
+.card-head .card-icon svg { width:22px; height:22px; display:block; }
+
+/* Decorative hero blob on projects page */
+.projects-hero { position: relative; overflow: visible; }
+.projects-hero::before {
+    content: '';
+    position: absolute;
+    right: -80px;
+    top: -40px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle at 30% 30%, rgba(139,92,246,0.18), rgba(59,130,246,0.06));
+    border-radius: 40% 60% 50% 50% / 55% 40% 60% 45%;
+    transform: rotate(-12deg) scale(1.02);
+    filter: blur(22px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Make cards feel playful: slight tilt on hover + accent underline */
+.project-card, .call-card { position: relative; overflow: visible; }
+.project-card::after, .call-card::after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -10px;
+    height: 6px;
+    background: linear-gradient(90deg,var(--accent-colour),var(--purple));
+    opacity: 0.12;
+    border-radius: 8px;
+    transform: scaleX(0.98);
+}
+.project-card:hover, .call-card:hover { transform: translateY(-8px) rotate(-0.4deg); }
+
+/* Gentle entrance animation for cards */
+@keyframes floatIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.995); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.project-card, .call-card { animation: floatIn 0.6s ease both; }
+
+/* Fancy CTA styles */
+.btn-primary { box-shadow: 0 12px 30px rgba(59,130,246,0.12); }
+.btn-secondary { border-radius: 10px; }
+
+/* Small decorative icon next to headings */
+.section-title { display:flex; align-items:center; gap:0.8rem; }
+.section-title .title-deco { width:40px; height:40px; border-radius:10px; background: linear-gradient(135deg,var(--accent-colour),var(--purple)); box-shadow: 0 8px 24px rgba(59,130,246,0.12); display:inline-flex; align-items:center; justify-content:center; }
+.section-title .title-deco svg { width:18px; height:18px; color:white; }
+
 .stats {
     animation-delay: 0.1s;
 }
