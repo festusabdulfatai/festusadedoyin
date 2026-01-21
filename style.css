@@ -258,6 +258,24 @@ section {
     .hero-video { display: none; }
 }
 
+/* semi-opaque overlay to improve text contrast over video */
+.hero .pattern-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(rgba(2,6,23,0.45), rgba(2,6,23,0.45));
+    pointer-events: none;
+}
+
+/* Hide video on small screens to save data and improve performance */
+@media (max-width: 768px) {
+    .hero-video { display: none; }
+    .hero .pattern-overlay { background: linear-gradient(rgba(2,6,23,0.65), rgba(2,6,23,0.65)); }
+}
+
+/* Optional: make sure hero has a sensible minimum height */
+.hero { min-height: 420px; display: flex; align-items: center; }
+
 .stats {
     animation-delay: 0.1s;
 }
