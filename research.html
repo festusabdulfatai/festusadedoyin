@@ -6,10 +6,7 @@
     <meta name="description" content="Research & Grants - Dr Festus Adedoyin | Machine Learning, FinTech AI, PhD Supervision, Funded Research Projects">
     <meta name="keywords" content="PhD Supervision, Research Grants, Machine Learning Research, FinTech, Digital Health, Maritime Analytics">
     <title>Research - Dr Festus Adedoyin</title>
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,21 +25,6 @@
                 <li><a href="teaching.html">Teaching</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <!-- Dark mode toggle removed -->
-                <li>
-                    <select id="language-selector" class="language-selector" onchange="translatePage()">
-                        <option value="">🌐 Language</option>
-                        <option value="en">English</option>
-                        <option value="fr">Français</option>
-                        <option value="zh-CN">中文</option>
-                        <option value="ar">العربية</option>
-                        <option value="pt">Português</option>
-                        <option value="es">Español</option>
-                        <option value="sw">Kiswahili</option>
-                        <option value="yo">Yorùbá</option>
-                        <option value="ha">Hausa</option>
-                    </select>
-                </li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -52,109 +34,137 @@
         </div>
     </nav>
 
+    <!-- Research Hero -->
     <section class="research-hero">
         <div class="container">
-            <div class="stats-row">
-                <div class="stat-card">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Active Industry Partnerships</div>
+            <div class="hero-grid">
+                <div class="hero-main">
+                    <h1 class="section-title">Research & Grants</h1>
+                    <p class="lead">Applied machine learning, FinTech AI, digital health interventions, maritime analytics, and evidence-based policy modelling. I lead interdisciplinary projects that bridge academia and industry.</p>
+                    <div class="hero-cta">
+                        <a class="btn btn-primary" href="projects.html">View Projects</a>
+                        <a class="btn btn-secondary" href="publications.html">See Publications</a>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Current PhD Supervisions</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">PhD Completions</div>
-                </div>
+
+                <aside class="hero-stats">
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-number">£2.5M</div>
+                            <div class="stat-label">Research Funding (total)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Active Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Current PhD Supervisions</div>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
 
-    <!-- PhD Supervision Section -->
-    <section class="phd-supervision">
+    <!-- Research Areas -->
+    <section class="research-areas">
         <div class="container">
-            <h2 class="section-title">PhD Supervision</h2>
-            
-            <p class="supervision-intro">
-                I actively supervise doctoral candidates working on applied problems at the intersection of machine learning, 
-                economics, and industry-relevant data science. My supervision philosophy emphasises rigorous methodology, practical 
-                impact, and industry engagement. I welcome enquiries from prospective students with strong quantitative backgrounds.
-            </p>
-
-            <h3>Current Supervision Portfolio</h3>
-            <div class="phd-grid grid-responsive">
-                <div class="phd-card card">
-                    <h4>FinTech & Anti-Money Laundering</h4>
-                    <p>Transformer-based architectures for financial crime detection</p>
-                    <span class="phd-status">In Progress (2022-2026)</span>
+            <h2 class="section-title">Research Areas</h2>
+            <div class="research-grid grid-responsive" style="--min-card-width:260px;">
+                <div class="card research-area">
+                    <h3>FinTech & AML</h3>
+                    <p>Transformer architectures for transaction monitoring, synthetic datasets, and operational deployment with industry partners.</p>
                 </div>
-                
-                <div class="phd-card card">
-                    <h4>Digital Health AI</h4>
-                    <p>Predictive interventions for emergency services well-being</p>
-                    <span class="phd-status">In Progress (2023-2026) • Funded</span>
+                <div class="card research-area">
+                    <h3>Digital Health</h3>
+                    <p>Predictive interventions for emergency responders and co-designed patient-facing technologies.</p>
                 </div>
-                
-                <div class="phd-card card">
-                    <h4>Maritime Analytics</h4>
-                    <p>ML-driven vessel performance optimisation</p>
-                    <span class="phd-status">In Progress (2022-2025) • Industry-sponsored</span>
+                <div class="card research-area">
+                    <h3>Maritime Analytics</h3>
+                    <p>Sensor-driven performance optimisation, routing efficiency, and emissions reduction strategies.</p>
                 </div>
-                
-                <div class="phd-card card">
-                    <h4>Economic Modelling & Development</h4>
-                    <p>Technology diffusion and innovation policy</p>
-                    <span class="phd-status">In Progress (2021-2025)</span>
+                <div class="card research-area">
+                    <h3>Economic Modelling</h3>
+                    <p>Dynamic ARDL simulations, policy impact modelling, and sustainability-linked economic analysis.</p>
                 </div>
-                
-                <div class="phd-card card">
-                    <h4>AI in Healthcare Operations</h4>
-                    <p>Care sector efficiency through data science</p>
-                    <span class="phd-status">In Progress (2025-2028) • KTP-funded</span>
-                </div>
-            </div>
-
-            <h3>Completed Supervision</h3>
-            <div class="completed-supervision">
-                <div class="completed-card card">
-                    <h4>Energy Economics & Environmental Policy</h4>
-                    <p><strong>Thesis:</strong> Climate Policy Design Through Quantitative Analysis</p>
-                    <p><strong>Outcome:</strong> Successful completion (2024), multiple publications</p>
-                </div>
-            </div>
-
-            <div class="supervision-cta">
-                <h3>Prospective PhD Students</h3>
-                <p>
-                    <strong>I am currently accepting PhD enquiries in:</strong>
-                </p>
-                <ul>
-                    <li>Machine Learning & Deep Learning Applications</li>
-                    <li>FinTech AI & Financial Crime Detection</li>
-                    <li>Digital Health & Predictive Health Analytics</li>
-                    <li>Maritime AI & IoT Analytics</li>
-                    <li>Applied Econometrics & Economic Modelling</li>
-                    <li>Responsible AI & Human-Centred Design</li>
-                </ul>
-                <p>
-                    <strong>Ideal candidate profile:</strong> Strong quantitative background (Computer Science, Mathematics, Economics, 
-                    Engineering, Physics), programming experience (Python/R), interest in applied research with real-world impact, 
-                    motivation to engage with industry partners.
-                </p>
-                <p class="contact-note">
-                    Please review my <a href="publications.html">publication record</a> and <a href="projects.html">current projects</a> 
-                    before making contact. Include a brief research proposal and CV in your initial email.
-                </p>
             </div>
         </div>
     </section>
-    <!-- Upcoming Events & Talks Section removed -->
 
-    <!-- Student Success Stories removed -->
-    
+    <!-- Research Timeline -->
+    <section class="research-timeline">
+        <div class="container">
+            <h2 class="section-title">Timeline & Key Milestones</h2>
 
-    <!-- Scroll to Top Button -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-box">Mar 2026</div>
+                    <div class="timeline-content">
+                        <h4>Tab-AML: IEEE CAI Publication</h4>
+                        <p>Accepted paper on Transformer-based transaction monitoring; industry dataset release and open-source toolkit.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-box">Nov 2025 — Feb 2026</div>
+                    <div class="timeline-content">
+                        <h4>KTP with Nourish Care (KTP Funded)</h4>
+                        <p>Knowledge Transfer Partnership delivering AI solutions for care sector operations; pilot deployment and evaluation.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-box">Jul 2025</div>
+                    <div class="timeline-content">
+                        <h4>PhD Completion — Energy Economics</h4>
+                        <p>Successful viva and thesis submission with multiple journal acceptances derived from the thesis work.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-box">2023 — 2025</div>
+                    <div class="timeline-content">
+                        <h4>Digital Health Co-design Projects</h4>
+                        <p>Collaborations with Hampshire Constabulary and NHS partners to develop wellbeing interventions for responders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grants & Collaborations -->
+    <section class="grants">
+        <div class="container">
+            <h2 class="section-title">Grants & Collaborations</h2>
+            <div class="grants-grid grid-responsive" style="--min-card-width:300px;">
+                <div class="card grant-card">
+                    <h4>UKRI / Industry KTP — £250,000</h4>
+                    <p>Knowledge Transfer Partnership with Nourish Care to develop care-sector AI solutions.</p>
+                </div>
+                <div class="card grant-card">
+                    <h4>Industry Partnership — Clearwater Dynamics</h4>
+                    <p>Maritime analytics project focusing on vessel performance and predictive maintenance.</p>
+                </div>
+                <div class="card grant-card">
+                    <h4>Internal BU Funding</h4>
+                    <p>Seed funding for early-stage PhD projects and prototype development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Interested in collaborating?</h2>
+                <p>I'm open to industry partnerships, PhD supervision, and interdisciplinary grant applications. Get in touch to discuss ideas.</p>
+                <a class="btn btn-primary" href="contact.html">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="site-footer" role="contentinfo">
         <div class="container">
@@ -211,10 +221,9 @@
     </button>
 
     <script src="main.js"></script>
-    
     <script type="text/javascript">
         function translatePage() {
-            var lang = document.getElementById('language-selector').value;
+            var lang = document.getElementById('language-selector')?.value;
             if (lang && lang !== 'en') {
                 var translateUrl = 'https://translate.google.com/translate?sl=auto&tl=' + lang + '&u=' + encodeURIComponent(window.location.href);
                 window.location.href = translateUrl;
