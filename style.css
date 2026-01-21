@@ -2548,7 +2548,7 @@ footer p { margin-bottom: 0.5rem; font-size: 1rem; color: #cbd5e1; }
 
 /* Experience timeline: show compact year badges when inserted by script */
 .experience-item { position: relative; display: flex; gap: 1rem; }
-.experience-item .timeline-year { min-width:72px; font-size:0.95rem; font-weight:700; color:#fff; padding:0.4rem 0.6rem; border-radius:8px; align-self:flex-start; background: linear-gradient(90deg,#2563eb,#3b82f6); box-shadow:0 8px 20px rgba(59,130,246,0.10); }
+.experience-item .timeline-year { min-width:72px; font-size:0.95rem; font-weight:700; color:#fff; -webkit-text-fill-color:#fff; padding:0.4rem 0.6rem; border-radius:8px; align-self:flex-start; background: linear-gradient(90deg,#2563eb,#3b82f6); box-shadow:0 8px 20px rgba(59,130,246,0.10); background-clip: padding-box; -webkit-background-clip: padding-box; }
 .experience-item .experience-header { flex:1; }
 .timeline-body { background:var(--bg-light); padding:0.8rem 1rem; border-radius:10px; }
 
