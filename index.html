@@ -129,14 +129,21 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <video class="hero-video" poster="images/profilephoto.JPG" autoplay muted loop playsinline aria-hidden="true">
+        <video class="hero-video" poster="images/profilephoto.JPG" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="images/ffa-720.webm" type="video/webm">
+            <source src="images/ffa-720.mp4" type="video/mp4">
             <source src="images/ffa.mp4" type="video/mp4">
             <!-- Fallback text -->
         </video>
         <div class="pattern-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Dr Festus Adedoyin</h1>
+                <div style="display:flex;align-items:center;gap:0.8rem;">
+                    <span class="title-deco" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.6 5.3L20 8l-4 3.4L17 20l-5-2.7L7 20l1-8.6L4 8l5.4-.7L12 2z" fill="#fff" opacity="0.12"/><path d="M12 2l2.6 5.3L20 8l-4 3.4L17 20l-5-2.7L7 20l1-8.6L4 8l5.4-.7L12 2z" stroke="#8b5cf6" stroke-width="1" stroke-linejoin="round"/></svg>
+                    </span>
+                    <h1>Dr Festus Adedoyin</h1>
+                </div>
                 <h2>Senior Lecturer in Computer Science</h2>
                 <p class="hero-subtitle">Machine Learning • AI in FinTech • Applied Data Science • Econometrics</p>
                 <p class="hero-description">
