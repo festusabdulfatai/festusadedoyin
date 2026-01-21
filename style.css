@@ -358,6 +358,15 @@ section {
     width: 100%;
 }
 
+/* Archived fallback links (inserted automatically for broken external links) */
+.archived-link {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-left: 0.35rem;
+    text-decoration: underline dotted;
+}
+.archived-link:hover { color: var(--accent-colour); }
+
 /* Theme toggle removed */
 
 /* Language Selector Styling */
