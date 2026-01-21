@@ -3997,3 +3997,47 @@ footer.site-footer {
 .cta .cta-content p {
     color: #ffffff !important;
 }
+
+/* ===================================
+     Research Tabs and Call-for-Chapters
+     =================================== */
+.research-tabs .tabs {
+    display: block;
+}
+.research-tabs input[type="radio"] {
+    display: none;
+}
+.research-tabs label {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    background: var(--bg-grey);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+}
+.research-tabs input[type="radio"]:checked + label {
+    background: var(--accent-colour);
+    color: #fff;
+}
+.research-tabs .tab-panels {
+    margin-top: 1rem;
+}
+.research-tabs .tab-panel {
+    display: none;
+}
+#tab-overview:checked ~ .tab-panels #panel-overview,
+#tab-calls:checked ~ .tab-panels #panel-calls {
+    display: block;
+}
+.call-card {
+    margin-bottom: 1.25rem;
+    padding: 1rem 1.25rem;
+}
+.call-card h3 { margin-top: 0; }
+.call-card h4 { margin: 0.25rem 0 0.75rem 0; font-weight: 600; }
+.call-card ul { margin: 0.5rem 0 1rem 1.25rem; }
+
+@media (max-width: 720px) {
+    .research-tabs label { display: block; margin-bottom: 0.5rem; }
+}
