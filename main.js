@@ -564,3 +564,93 @@ document.addEventListener('DOMContentLoaded', () => {
     
     exportBtn.addEventListener('click', exportToBibTeX);
 });
+
+    // ============================================
+    // Cookie consent / GDPR banner
+    // Lightweight consent banner stored in localStorage
+    // ============================================
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const consentKey = 'site_cookie_consent_v1';
+
+        function hasConsent() {
+            return localStorage.getItem(consentKey) !== null;
+        }
+
+        function setConsent(value) {
+            localStorage.setItem(consentKey, value);
+        }
+
+        function createBanner() {
+            if (hasConsent()) return;
+
+            const banner = document.createElement('div');
+            banner.id = 'cookie-banner';
+            banner.innerHTML = `
+                <div class="cookie-inner container">
+                    <div class="cookie-text">
+                        <strong>EU visitors:</strong> This site uses only essential cookies and minimal third-party services (e.g. font delivery, contact form). Read our <a href="/privacy.html">Privacy Policy</a> for details.
+                    </div>
+                    <div class="cookie-actions">
+                        <button id="cookie-accept" class="btn btn-primary">Accept</button>
+                        <button id="cookie-reject" class="btn btn-secondary">Reject</button>
+                        <button id="cookie-manage" class="btn">Manage</button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(banner);
+
+            document.getElementById('cookie-accept').addEventListener('click', () => {
+                setConsent('accepted');
+                banner.remove();
+            });
+
+            document.getElementById('cookie-reject').addEventListener('click', () => {
+                setConsent('rejected');
+                banner.remove();
+            });
+
+            document.getElementById('cookie-manage').addEventListener('click', () => {
+                openManageDialog();
+            });
+        }
+
+        function openManageDialog() {
+            // simple dialog to show options
+            const dlg = document.createElement('div');
+            dlg.className = 'cookie-manage';
+            dlg.innerHTML = `
+                <div class="cookie-manage-inner container">
+                    <h3>Manage Cookie Preferences</h3>
+                    <p>You can choose whether to accept non-essential cookies. Essential cookies required for site function will remain.</p>
+                    <div class="manage-actions">
+                        <button id="manage-accept" class="btn btn-primary">Accept All</button>
+                        <button id="manage-reject" class="btn btn-secondary">Reject All</button>
+                        <button id="manage-close" class="btn">Close</button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(dlg);
+
+            document.getElementById('manage-accept').addEventListener('click', () => {
+                setConsent('accepted');
+                dlg.remove();
+                const b = document.getElementById('cookie-banner'); if (b) b.remove();
+            });
+
+            document.getElementById('manage-reject').addEventListener('click', () => {
+                setConsent('rejected');
+                dlg.remove();
+                const b = document.getElementById('cookie-banner'); if (b) b.remove();
+            });
+
+            document.getElementById('manage-close').addEventListener('click', () => {
+                dlg.remove();
+            });
+        }
+
+        // Defer creating banner slightly to avoid flash before CSS loads
+        setTimeout(createBanner, 350);
+    });
