@@ -654,3 +654,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Defer creating banner slightly to avoid flash before CSS loads
         setTimeout(createBanner, 350);
     });
+
+    // Connect analytics toggle on privacy page to local preference
+    document.addEventListener('DOMContentLoaded', () => {
+        const analyticsToggle = document.getElementById('analytics-toggle');
+        const analyticsKey = 'site_analytics_opt_in_v1';
+
+        if (!analyticsToggle) return;
+
+        const current = localStorage.getItem(analyticsKey);
+        analyticsToggle.checked = current === 'true';
+
+        analyticsToggle.addEventListener('change', (e) => {
+            const enabled = e.target.checked;
+            localStorage.setItem(analyticsKey, enabled ? 'true' : 'false');
+            // Optionally initialize or disable analytics here
+            if (enabled) {
+                console.info('Analytics enabled (user preference)');
+            } else {
+                console.info('Analytics disabled (user preference)');
+            }
+        });
+    });
