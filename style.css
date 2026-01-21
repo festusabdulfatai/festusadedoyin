@@ -278,6 +278,17 @@ section {
 
 /* Current Projects page styles */
 .projects-hero { padding: 56px 0; }
+
+/* Make the hero page title stand out: white text on blue background */
+.projects-hero .section-title {
+    color: #ffffff;
+    background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(37,99,235,0.12);
+}
+.projects-hero .section-title::after { display: none; }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.25rem; }
 .project-card,
 .call-card {
