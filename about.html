@@ -699,5 +699,23 @@
             }
         }
     </script>
+    <script>
+    // Inject compact year badges for experience timeline items
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.experience-item').forEach(function(item){
+            if (item.querySelector('.timeline-year')) return; // skip if already present
+            var periodEl = item.querySelector('.experience-period');
+            if (!periodEl) return;
+            var txt = periodEl.textContent.trim();
+            var years = txt.match(/(19|20)\d{2}/g);
+            if (!years || years.length === 0) return;
+            var badgeText = years.length === 1 ? years[0] : (years[0] + '–' + years[years.length-1]);
+            var yearDiv = document.createElement('div');
+            yearDiv.className = 'timeline-year';
+            yearDiv.textContent = badgeText;
+            item.insertBefore(yearDiv, item.firstChild);
+        });
+    });
+    </script>
 </body>
 </html>
