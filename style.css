@@ -4145,6 +4145,11 @@ footer.site-footer {
     color: var(--text-dark) !important;
 }
 
+/* Ensure Current Projects grid text is visible (prevent accidental white-on-white) */
+.projects-grid, .projects-grid * {
+    color: var(--text-dark) !important;
+}
+
 /* Make common text elements inherit the safer color when inside these containers */
 .project-card h3,
 .project-card p,
