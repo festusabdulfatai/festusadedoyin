@@ -860,7 +860,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const navMenu = document.querySelector('.nav-menu');
             if (navMenu && !document.getElementById('nav-search-toggle')) {
                 const li = document.createElement('li');
-                li.innerHTML = '<button id="nav-search-toggle" class="filter" aria-label="Open site search">Search</button>';
+                li.innerHTML = '<button id="nav-search-toggle" class="filter nav-search-btn" aria-label="Open site search"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></line></svg></button>';
                 navMenu.appendChild(li);
             }
 

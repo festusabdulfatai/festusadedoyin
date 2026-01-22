@@ -4420,3 +4420,19 @@ footer.site-footer {
     #cookie-banner .cookie-inner { flex-direction: column; align-items:stretch; }
     #cookie-banner .cookie-actions { justify-content:flex-end; }
 }
+
+/* Nav search button (magnifying glass) */
+.nav-search-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+.nav-search-btn svg { width: 18px; height: 18px; display: block; }
+.nav-search-btn:hover { color: var(--accent-colour); background: rgba(59,130,246,0.04); }
+.nav-search-btn:focus { outline: 3px solid rgba(59,130,246,0.12); outline-offset: 2px; }
