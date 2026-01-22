@@ -34,6 +34,20 @@
     --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Visitor map dots: high-contrast fill + white stroke for visibility on blue backgrounds */
+.visitor-dot {
+    fill: var(--success-colour);
+    stroke: #ffffff;
+    stroke-width: 0.9px;
+    opacity: 0.98;
+    transition: transform 120ms ease, opacity 120ms ease;
+}
+.visitor-dot:hover,
+.visitor-dot:focus {
+    transform: scale(1.25);
+    opacity: 1;
+}
+
 /* Dark mode CSS removed */
 
 html {
