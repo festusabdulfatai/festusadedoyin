@@ -142,9 +142,17 @@
 
             <!-- Merged Current Projects content -->
             <section class="merged-projects" style="margin-top:2rem;">
+                <div class="research-filters" aria-label="Filter projects">
+                    <button class="filter active" data-filter="all">All</button>
+                    <button class="filter" data-filter="project">Projects</button>
+                    <button class="filter" data-filter="grant">Grants</button>
+                    <button class="filter" data-filter="call">Calls</button>
+                    <button class="filter" data-filter="phd">PhD</button>
+                </div>
+
                 <div class="projects-grid grid-responsive" style="--min-card-width:320px;">
 
-                    <article class="call-card">
+                    <article class="call-card" data-type="call">
                         <div class="call-head">
                             <div style="display:flex; align-items:center; gap:0.75rem;">
                                 <div class="card-icon" aria-hidden="true">
@@ -166,7 +174,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card" data-type="project">
                         <div class="card-head">
                             <div style="display:flex; align-items:center; gap:0.75rem;">
                                 <div class="card-icon" aria-hidden="true">
@@ -187,7 +195,7 @@
                         </div>
                     </article>
 
-                    <article class="call-card">
+                    <article class="call-card" data-type="call">
                         <div class="call-head">
                             <h3>Call for Chapters — MLE & Human-Centred Innovations</h3>
                             <div class="ribbon">Open</div>
@@ -279,6 +287,24 @@
                 window.location.href = translateUrl;
             }
         }
+    </script>
+    <script>
+        // Lightweight project filter
+        (function(){
+            function onFilterClick(e){
+                var btn = e.target.closest('.filter');
+                if(!btn) return;
+                var container = document.querySelector('.projects-grid');
+                document.querySelectorAll('.research-filters .filter').forEach(function(b){ b.classList.toggle('active', b===btn); });
+                var filter = btn.getAttribute('data-filter');
+                container.querySelectorAll('article').forEach(function(a){
+                    if(filter==='all') { a.classList.remove('hidden'); return; }
+                    var t = a.getAttribute('data-type')||'';
+                    if(t===filter) a.classList.remove('hidden'); else a.classList.add('hidden');
+                });
+            }
+            document.addEventListener('click', function(e){ if(e.target.closest('.research-filters')) onFilterClick(e); });
+        })();
     </script>
 </body>
 </html>

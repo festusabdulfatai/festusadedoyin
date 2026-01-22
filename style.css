@@ -398,6 +398,27 @@ section {
 
 .highlights {
     animation-delay: 0.2s;
+
+/* Research page specific tweaks */
+.research-hero .lead { color: var(--text-light); margin-top: 0.6rem; max-width: 70ch; }
+
+.research-filters { display:flex; gap:0.5rem; align-items:center; margin-bottom:1rem; flex-wrap:wrap; }
+.research-filters .filter { background: transparent; border: 1px solid rgba(15,23,42,0.06); padding:8px 12px; border-radius: 999px; cursor:pointer; color: var(--text-dark); transition: var(--transition-fast); font-weight:600; }
+.research-filters .filter.active { background: var(--accent-gradient); color: white; box-shadow: 0 8px 24px rgba(59,130,246,0.12); transform: translateY(-2px); }
+
+.projects-grid article.hidden { display:none !important; }
+
+/* Slightly larger, clearer timeline time box */
+.timeline .time-box { background: linear-gradient(90deg, rgba(59,130,246,0.08), rgba(139,92,246,0.06)); color: var(--accent-colour); border-radius: 8px; padding: 8px 12px; font-weight:700; min-width:72px; text-align:center; }
+
+/* Tighter card layout on research page */
+.project-card, .call-card { padding:1rem; }
+.project-card .muted, .call-card .muted { color: var(--text-light); }
+
+@media (max-width: 880px) {
+    .research-hero .hero-grid { grid-template-columns: 1fr; }
+    .research-filters { justify-content: flex-start; }
+}
 }
 
 .testimonials {
