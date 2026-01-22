@@ -190,6 +190,22 @@
         </div>
     </section>
 
+    <!-- Visitor Map (privacy-first; requires analytics opt-in or data endpoint) -->
+    <section class="visitor-map-section" aria-label="Visitor locations">
+        <div class="container">
+            <h2 class="section-title">Visitor Map</h2>
+            <p class="section-subtitle">A privacy-respecting summary of where visitors come from (shown only if analytics are enabled).</p>
+            <div id="visitor-map" class="visitor-map">
+                <svg id="visitor-svg" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                    <rect width="100%" height="100%" fill="transparent"></rect>
+                    <!-- coastlines placeholder (minimal) -->
+                    <g id="map-dots"></g>
+                </svg>
+                <div id="visitor-legend" class="visitor-legend">Visitor data not available. Enable analytics or provide a `visitor-data-endpoint` meta tag to show live data.</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Research Impact Section -->
     <section class="research-impact">
         <div class="container">

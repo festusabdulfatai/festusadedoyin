@@ -36,6 +36,109 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
+// Visitor map rendering (privacy-first)
+// Looks for local data at `/data/visitors.json` or a configured endpoint via
+// <meta name="visitor-data-endpoint" content="/api/visitors">. Only renders if
+// analytics opt-in (`site_analytics_opt_in_v1` localStorage) is true.
+// Data format expected: { "US": 120, "GB": 34, "NG": 5 }
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('visitor-map');
+    if (!container) return;
+
+    const legendEl = document.getElementById('visitor-legend');
+    const svg = document.getElementById('visitor-svg');
+    const dots = document.getElementById('map-dots');
+    if (!svg || !dots || !legendEl) return;
+
+    const centroids = {
+        "US": [-98.35, 39.50], "GB": [-2.0, 54.0], "NG": [8.6753, 9.0820], "IN": [78.9629, 20.5937],
+        "CA": [-106.34, 56.13], "AU": [134.49, -25.73], "DE": [10.45, 51.17], "FR": [2.21, 46.23],
+        "ES": [-3.7, 40.4], "IT": [12.57, 41.87], "NL": [5.29, 52.13], "SE": [18.64, 60.13], "NO": [8.47, 60.47],
+        "DK": [9.5, 56.26], "CN": [104.19, 35.86], "JP": [138.25, 36.20], "KR": [127.77, 35.91], "BR": [-51.92, -14.24],
+        "ZA": [22.94, -30.56], "KE": [37.91, -0.02], "GH": [-1.02, 7.95], "IE": [-8.24, 53.14], "CH": [8.23, 46.82],
+        "BE": [4.47, 50.50], "PT": [-8.24, 39.40], "MX": [-102.55, 23.63], "AR": [-63.62, -38.42], "RU": [105.32, 61.52],
+        "TR": [35.24, 38.96], "PK": [69.34, 30.38], "BD": [90.41, 23.69], "VN": [108.27, 14.06], "ID": [113.92, -0.79],
+        "PH": [121.78, 12.87], "TH": [100.99, 15.87], "EG": [30.80, 26.82], "SA": [45.08, 23.88], "IL": [34.85, 31.05]
+    };
+
+    function project(lon, lat) {
+        const w = 600, h = 320; // viewBox dimensions
+        const x = ((lon + 180) / 360) * w;
+        const y = ((90 - lat) / 180) * h;
+        return [x, y];
+    }
+
+    function render(data) {
+        dots.innerHTML = '';
+        const entries = Object.entries(data).sort((a,b)=>b[1]-a[1]);
+        const total = entries.reduce((s,kv)=>s+kv[1],0) || 0;
+        if (!entries.length) { legendEl.textContent = 'No visitor data available.'; return; }
+
+        // Render top 30 points
+        const maxCount = entries[0][1];
+        entries.slice(0,30).forEach(([code,count],i)=>{
+            const c = (centroids[code]||null);
+            if (!c) return; // skip unknown centroid
+            const [x,y] = project(c[0], c[1]);
+            const r = Math.max(4, (count / maxCount) * 18);
+            const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+            circle.setAttribute('cx', x.toString());
+            circle.setAttribute('cy', y.toString());
+            circle.setAttribute('r', r.toString());
+            circle.setAttribute('class','visitor-dot');
+            circle.setAttribute('data-code', code);
+            circle.setAttribute('data-count', count);
+            circle.setAttribute('title', `${code}: ${count} visitors`);
+            dots.appendChild(circle);
+        });
+
+        // Build legend list
+        legendEl.innerHTML = '<h4>Top visitor countries</h4>';
+        entries.slice(0,20).forEach(([code,count])=>{
+            const div = document.createElement('div');
+            div.className = 'country-item';
+            const left = document.createElement('div'); left.textContent = `${code}`;
+            const right = document.createElement('div'); right.textContent = `${count}`;
+            div.appendChild(left); div.appendChild(right);
+            legendEl.appendChild(div);
+        });
+        const foot = document.createElement('div'); foot.style.marginTop='0.6rem'; foot.style.fontSize='0.95rem'; foot.style.color='var(--text-muted)'; foot.textContent = `Total visitors in dataset: ${total}`;
+        legendEl.appendChild(foot);
+    }
+
+    async function fetchData() {
+        const analyticsOptIn = localStorage.getItem('site_analytics_opt_in_v1') === 'true';
+        if (!analyticsOptIn) {
+            legendEl.textContent = 'Visitor map is available when analytics opt-in is enabled in Privacy settings.';
+            return;
+        }
+
+        // Try local data first
+        try {
+            const r = await fetch('/data/visitors.json', {cache: 'no-store'});
+            if (r.ok) {
+                const d = await r.json(); render(d); return;
+            }
+        } catch(e) {}
+
+        // Try configurable endpoint via meta tag
+        const meta = document.querySelector('meta[name="visitor-data-endpoint"]');
+        if (meta && meta.content) {
+            try {
+                const r = await fetch(meta.content, {credentials:'omit'});
+                if (r.ok) { const d = await r.json(); render(d); return; }
+            } catch(e) {}
+        }
+
+        legendEl.textContent = 'Visitor data endpoint not configured. To enable live visitor map, provide aggregated country counts at /data/visitors.json or configure a visitor-data-endpoint meta tag.';
+    }
+
+    fetchData();
+
+});
+
+// ============================================
 // Mobile Menu Toggle
 // ============================================
 
