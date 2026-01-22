@@ -1,0 +1,44 @@
+name: Update Visitor Map
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # daily at 06:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  update-visitors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install requirements
+        run: python -m pip install --upgrade pip && pip install requests
+
+      - name: Fetch visitor counts
+        env:
+          VISITOR_DATA_ENDPOINT: ${{ secrets.VISITOR_DATA_ENDPOINT }}
+          PLAUSIBLE_API_KEY: ${{ secrets.PLAUSIBLE_API_KEY }}
+          PLAUSIBLE_SITE: ${{ secrets.PLAUSIBLE_SITE }}
+          PLAUSIBLE_PERIOD: '30d'
+        run: |
+          python scripts/fetch_visitors.py
+
+      - name: Commit visitor data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/visitors.json || true
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(data): update visitor map data [skip ci]" || true
+            git push origin HEAD:main
+          else
+            echo "No changes to commit"
+          fi
