@@ -431,6 +431,21 @@ section {
 
 .research-main { min-width: 0; }
 
+/* Thumbnail and card body styles */
+.card-thumb { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; display:block; margin-bottom:0.8rem; }
+.card-body { display:flex; flex-direction:column; gap:0.5rem; }
+.card-excerpt { color: var(--text-light); line-height:1.5; margin:0; }
+.tag-pills { display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.25rem; }
+.tag-pill { background: rgba(2,6,23,0.04); color: var(--text-dark); padding:6px 10px; border-radius:999px; font-weight:700; font-size:0.85rem; }
+.tag-pill + .tag-pill { margin-left:0.25rem; }
+
+/* Ensure header and badge align nicely with thumbnails */
+.card-head h3 { display:flex; align-items:center; gap:0.6rem; }
+
+@media (max-width: 600px) {
+    .card-thumb { height: 120px; }
+}
+
 /* Project card visual tweaks */
 .project-card, .call-card { display:flex; flex-direction:column; }
 .card-head { align-items:flex-start; }
