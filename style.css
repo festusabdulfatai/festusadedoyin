@@ -4150,6 +4150,20 @@ footer.site-footer {
     color: var(--text-dark) !important;
 }
 
+/* Make sure secondary action links in Current Projects are blue (not white) */
+.projects-grid .btn-secondary,
+.projects-grid a.btn-secondary {
+    color: var(--accent-colour) !important;
+    background: transparent !important;
+    border-color: rgba(59,130,246,0.12) !important;
+}
+.projects-grid .btn-secondary:hover,
+.projects-grid a.btn-secondary:hover {
+    color: #ffffff !important;
+    background: var(--accent-colour) !important;
+    border-color: var(--accent-colour) !important;
+}
+
 /* Make common text elements inherit the safer color when inside these containers */
 .project-card h3,
 .project-card p,
