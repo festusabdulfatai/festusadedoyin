@@ -676,3 +676,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+// ============================================
+// Active navigation highlight
+// Adds `active` class and `aria-current="page"` to the matching nav link
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        var links = Array.from(document.querySelectorAll('.nav-menu a'));
+        var path = window.location.pathname.split('/').pop();
+        if (!path || path === '') path = 'index.html';
+
+        links.forEach(function(link){
+            try {
+                var href = link.getAttribute('href');
+                if(!href) return;
+                // Normalize href last segment
+                var hrefName = href.split('/').pop();
+                if(!hrefName) hrefName = href;
+                if(hrefName === path || (path === 'index.html' && (hrefName === 'index.html' || hrefName === './' || hrefName === '/'))){
+                    link.classList.add('active');
+                    link.setAttribute('aria-current','page');
+                } else {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                }
+            } catch (e) { /* ignore per-link errors */ }
+        });
+    } catch (e) { console.warn('nav highlight error', e); }
+});
