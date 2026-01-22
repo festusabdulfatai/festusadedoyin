@@ -118,6 +118,14 @@ Consider adding:
 
 ---
 
+## 🔁 CI / Visitor Map
+
+- **Workflow:** `.github/workflows/update-visitors.yml` — runs daily and supports manual dispatch.
+- **What it does:** Executes `scripts/fetch_visitors.py` and updates `data/visitors.json` when counts change.
+- **Required repo secrets:** `PLAUSIBLE_API_KEY` and `PLAUSIBLE_SITE` (when using Plausible), or `VISITOR_DATA_ENDPOINT` (optional, for a custom data endpoint).
+- **Enable:** Add the secret(s) under the repository Settings → Secrets and ensure GitHub Actions are enabled for the repo.
+
+
 **Maintained by**: Dr Festus Adedoyin  
 **Institution**: Bournemouth University  
 **Last Updated**: January 2026
