@@ -705,3 +705,105 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } catch (e) { console.warn('nav highlight error', e); }
 });
+
+// ============================================
+// Site-wide accessibility and small UI enhancements
+// - Inject a skip link
+// - Breadcrumb insertion under navbar
+// - Floating contact CTA
+// - Lightweight search overlay using local search_index.json
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        // Inject skip link (accessible target present on pages)
+        if (!document.getElementById('skip-link')) {
+            const skip = document.createElement('a');
+            skip.href = '#main-content';
+            skip.id = 'skip-link';
+            skip.className = 'skip-link';
+            skip.textContent = 'Skip to main content';
+            document.body.insertBefore(skip, document.body.firstChild);
+        }
+
+        // Ensure main content has id for skip
+        const main = document.querySelector('main') || document.querySelector('.container');
+        if (main && !main.id) main.id = 'main-content';
+
+        // Breadcrumb insertion (simple heuristic)
+        const nav = document.querySelector('.navbar');
+        if (nav) {
+            const path = window.location.pathname.split('/').pop() || 'index.html';
+            const map = {
+                'index.html':'Home', 'about.html':'About', 'research.html':'Research', 'projects.html':'AI Projects', 'publications.html':'Publications', 'contact.html':'Contact', 'teaching.html':'Teaching', 'volunteering.html':'Volunteering'
+            };
+            const label = map[path] || document.title || path;
+            const bc = document.createElement('div');
+            bc.className = 'container breadcrumb';
+            bc.innerHTML = `<a href="index.html">Home</a> &rsaquo; <span aria-current="page">${label.replace(/\.(html)$/,'')}</span>`;
+            nav.after(bc);
+        }
+
+        // Floating CTA
+        if (!document.querySelector('.floating-cta')) {
+            const f = document.createElement('div');
+            f.className = 'floating-cta';
+            f.innerHTML = `<a href="contact.html" class="cta-btn" aria-label="Contact Dr Festus Adedoyin"><span class="icon">✉</span><span>Contact</span></a>`;
+            document.body.appendChild(f);
+        }
+
+        // Lightweight search overlay setup
+        (function(){
+            // add search button to nav (if not present)
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu && !document.getElementById('nav-search-toggle')) {
+                const li = document.createElement('li');
+                li.innerHTML = '<button id="nav-search-toggle" class="filter" aria-label="Open site search">Search</button>';
+                navMenu.appendChild(li);
+            }
+
+            // create overlay element
+            if (!document.querySelector('.search-overlay')) {
+                const overlay = document.createElement('div');
+                overlay.className = 'search-overlay';
+                overlay.innerHTML = `
+                    <div class="search-box" role="dialog" aria-modal="true" aria-label="Site search">
+                        <input id="global-search-input" class="search-input-full" placeholder="Search projects, publications, pages..." aria-label="Search site">
+                        <div id="search-results" class="search-results" role="list"></div>
+                    </div>
+                `;
+                document.body.appendChild(overlay);
+
+                // open/close handlers
+                document.getElementById('nav-search-toggle')?.addEventListener('click', () => { overlay.classList.add('active'); document.getElementById('global-search-input').focus(); });
+                overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('active'); });
+                document.addEventListener('keydown', (e) => { if (e.key==='Escape') overlay.classList.remove('active'); });
+
+                // search logic (simple substring search against local JSON index)
+                let index = [];
+                fetch('search_index.json').then(r=>r.json()).then(data=>{ index = data; }).catch(()=>{ index = []; });
+
+                const input = document.getElementById('global-search-input');
+                const resultsEl = document.getElementById('search-results');
+                let timer;
+                input && input.addEventListener('input', (e) => {
+                    clearTimeout(timer);
+                    timer = setTimeout(()=>{
+                        const q = (e.target.value||'').toLowerCase().trim();
+                        resultsEl.innerHTML = '';
+                        if (!q) return;
+                        const matches = index.filter(item => (item.title+ ' '+ item.text).toLowerCase().indexOf(q) !== -1).slice(0,20);
+                        if (matches.length===0) { resultsEl.innerHTML = '<div class="search-result">No results</div>'; return; }
+                        matches.forEach(m => {
+                            const a = document.createElement('a');
+                            a.className = 'search-result';
+                            a.href = m.url;
+                            a.innerHTML = `<strong>${m.title}</strong><div style="font-size:0.9rem;color:var(--text-light)">${m.text.slice(0,160)}${m.text.length>160?'…':''}</div>`;
+                            resultsEl.appendChild(a);
+                        });
+                    }, 180);
+                });
+            }
+        })();
+
+    } catch (e) { console.warn('enhancement init error', e); }
+});

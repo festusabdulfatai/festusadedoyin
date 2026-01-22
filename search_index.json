@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Home",
+    "url": "index.html",
+    "text": "Dr Festus Adedoyin — Senior Lecturer in Computer Science. Machine Learning, FinTech AI, Digital Health, Maritime Analytics."
+  },
+  {
+    "title": "Research & Collaboration",
+    "url": "research.html",
+    "text": "Applied machine learning, FinTech AI, digital health interventions, maritime analytics, and evidence-based policy modelling."
+  },
+  {
+    "title": "KTP with Nourish Care",
+    "url": "research.html#ktp",
+    "text": "Industry-academic KTP developing AI tools to improve care-sector operations and workforce efficiency."
+  },
+  {
+    "title": "AI Projects",
+    "url": "projects.html",
+    "text": "Data science and AI projects including maritime analytics, synthetic dataset generation, and applied ML systems."
+  },
+  {
+    "title": "Publications",
+    "url": "publications.html",
+    "text": "Peer-reviewed articles, conference papers and book chapters by Dr Festus Adedoyin. Download BibTeX and PDF copies."
+  },
+  {
+    "title": "Contact",
+    "url": "contact.html",
+    "text": "Get in touch for PhD supervision, industry partnership and research collaborations."
+  },
+  {
+    "title": "About",
+    "url": "about.html",
+    "text": "Biography, teaching interests, awards and professional memberships."
+  }
+]
