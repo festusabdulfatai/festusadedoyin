@@ -129,3 +129,34 @@ Consider adding:
 **Maintained by**: Dr Festus Adedoyin  
 **Institution**: Bournemouth University  
 **Last Updated**: January 2026
+
+## 🗂 Large Media / Hosting Recommendations
+
+- Repo size has been reduced by removing very large media files from history. Large media were moved to a local backup branch `backup-before-clean`.
+- For production hosting of videos and large images use an object store + CDN (recommended):
+    - Amazon S3 + CloudFront, Google Cloud Storage + CDN, or Cloudflare R2 + Cloudflare CDN.
+    - Benefits: reduced repo size, better bandwidth handling, lower page load times.
+
+Quick S3 upload example (replace placeholders):
+```bash
+# Install AWS CLI and configure credentials (or use CI secrets)
+aws s3 cp path/to/ffa.mp4 s3://your-bucket-name/media/ffa.mp4 --acl public-read --cache-control "public, max-age=31536000"
+```
+
+Update your `index.html` video/source URLs to point to the CDN URL (or S3 public URL).
+
+- Alternative: Git LFS for keeping binaries with Git, but note storage & bandwidth quotas on GitHub LFS.
+
+Git LFS quick setup (optional):
+```bash
+git lfs install
+git lfs track "images/*.mp4"
+git add .gitattributes
+git add images/ffa.mp4
+git commit -m "chore: track large media with Git LFS"
+git push origin main
+```
+
+If you want, I can:
+- Upload the large media to an S3 bucket (you'll need to provide credentials or a pre-configured bucket with upload access), and update `index.html` to reference the hosted files.
+- Or set up `git lfs` tracking and help migrate the files onto Git LFS (requires you to accept LFS quotas or add billing for extra storage/bandwidth).
