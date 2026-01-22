@@ -3868,7 +3868,7 @@ footer .social-link:hover {
 .scroll-to-top {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
+    right: 4.25rem;
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -3884,7 +3884,7 @@ footer .social-link:hover {
     visibility: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-    z-index: 999;
+    z-index: 1400; /* sit above floating CTA (which is 1200) */
 }
 
 .scroll-to-top.visible {
@@ -3898,6 +3898,12 @@ footer .social-link:hover {
 }
 
 .scroll-to-top:active { transform: translateY(-2px); }
+
+/* Ensure scroll button doesn't clash with floating CTA on very small screens */
+@media (max-width: 480px) {
+    .scroll-to-top { right: 1rem; bottom: 5.25rem; }
+    .floating-cta { right: 1rem; bottom: 1rem; }
+}
 
 footer.site-footer {
     background: linear-gradient(180deg, #071427 0%, #081826 100%);
