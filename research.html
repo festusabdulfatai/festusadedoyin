@@ -66,7 +66,7 @@
                 </aside>
             </div>
         </div>
-    </section>
+        </section>
 
     <!-- Research Areas -->
     <!-- Overview content with link to Current Projects page -->
@@ -142,15 +142,30 @@
 
             <!-- Merged Current Projects content -->
             <section class="merged-projects" style="margin-top:2rem;">
-                <div class="research-filters" aria-label="Filter projects">
-                    <button class="filter active" data-filter="all">All</button>
-                    <button class="filter" data-filter="project">Projects</button>
-                    <button class="filter" data-filter="grant">Grants</button>
-                    <button class="filter" data-filter="call">Calls</button>
-                    <button class="filter" data-filter="phd">PhD</button>
-                </div>
+                <div class="research-layout">
+                    <aside class="research-sidebar" aria-labelledby="research-controls">
+                        <div id="research-controls" class="sidebar-inner">
+                            <h3>Filter & Search</h3>
+                            <input id="research-search" class="search-input" type="search" placeholder="Search projects, tags, partners" aria-label="Search projects">
+                            <div class="research-filters" role="tablist" aria-label="Project type filters">
+                                <button class="filter active" data-filter="all" role="tab" aria-pressed="true" tabindex="0">All</button>
+                                <button class="filter" data-filter="project" role="tab" aria-pressed="false" tabindex="-1">Projects</button>
+                                <button class="filter" data-filter="grant" role="tab" aria-pressed="false" tabindex="-1">Grants</button>
+                                <button class="filter" data-filter="call" role="tab" aria-pressed="false" tabindex="-1">Calls</button>
+                                <button class="filter" data-filter="phd" role="tab" aria-pressed="false" tabindex="-1">PhD</button>
+                            </div>
+                            <h4>Tags</h4>
+                            <div class="tag-cloud">
+                                <button class="tag" data-tag="aml">AML</button>
+                                <button class="tag" data-tag="ktp">KTP</button>
+                                <button class="tag" data-tag="health">Digital Health</button>
+                                <button class="tag" data-tag="maritime">Maritime</button>
+                            </div>
+                        </div>
+                    </aside>
 
-                <div class="projects-grid grid-responsive" style="--min-card-width:320px;">
+                    <main class="research-main">
+                        <div class="projects-grid grid-responsive" style="--min-card-width:320px;">
 
                     <article class="call-card" data-type="call">
                         <div class="call-head">
@@ -289,21 +304,75 @@
         }
     </script>
     <script>
-        // Lightweight project filter
+        // Enhanced filtering: keyboard navigation, search, and tag toggles
         (function(){
-            function onFilterClick(e){
-                var btn = e.target.closest('.filter');
-                if(!btn) return;
-                var container = document.querySelector('.projects-grid');
-                document.querySelectorAll('.research-filters .filter').forEach(function(b){ b.classList.toggle('active', b===btn); });
-                var filter = btn.getAttribute('data-filter');
+            var container = document.querySelector('.projects-grid');
+            var filters = Array.from(document.querySelectorAll('.research-filters .filter'));
+            var tags = Array.from(document.querySelectorAll('.tag-cloud .tag'));
+            var searchInput = document.getElementById('research-search');
+            var activeTag = null;
+
+            function applyFilters(){
+                var activeFilter = filters.find(function(b){ return b.classList.contains('active'); });
+                var filter = activeFilter ? activeFilter.getAttribute('data-filter') : 'all';
+                var term = (searchInput?.value || '').trim().toLowerCase();
                 container.querySelectorAll('article').forEach(function(a){
-                    if(filter==='all') { a.classList.remove('hidden'); return; }
-                    var t = a.getAttribute('data-type')||'';
-                    if(t===filter) a.classList.remove('hidden'); else a.classList.add('hidden');
+                    var t = a.getAttribute('data-type') || '';
+                    var text = a.textContent.toLowerCase();
+                    var matchesType = (filter==='all') || (t===filter);
+                    var matchesSearch = !term || text.indexOf(term) !== -1;
+                    var matchesTag = !activeTag || (a.getAttribute('data-tags')||'').split(' ').indexOf(activeTag) !== -1;
+                    if(matchesType && matchesSearch && matchesTag) a.classList.remove('hidden'); else a.classList.add('hidden');
                 });
             }
-            document.addEventListener('click', function(e){ if(e.target.closest('.research-filters')) onFilterClick(e); });
+
+            // click handlers
+            document.addEventListener('click', function(e){
+                var f = e.target.closest('.research-filters .filter');
+                if(f){
+                    filters.forEach(function(b){ b.classList.toggle('active', b===f); b.setAttribute('aria-pressed', b===f ? 'true' : 'false'); b.tabIndex = b===f ? 0 : -1; });
+                    applyFilters();
+                    return;
+                }
+                var tg = e.target.closest('.tag');
+                if(tg){
+                    // toggle tag
+                    if(activeTag === tg.getAttribute('data-tag')) { activeTag = null; tg.classList.remove('active'); }
+                    else { tags.forEach(function(t){ t.classList.remove('active'); }); activeTag = tg.getAttribute('data-tag'); tg.classList.add('active'); }
+                    applyFilters();
+                    return;
+                }
+            });
+
+            // keyboard navigation for filter tablist (left/right to move)
+            var tablist = document.querySelector('.research-filters');
+            tablist && tablist.addEventListener('keydown', function(e){
+                var idx = filters.findIndex(function(b){ return b.tabIndex === 0; });
+                if(idx === -1) idx = 0;
+                if(e.key === 'ArrowRight'){ e.preventDefault(); var next = filters[(idx+1)%filters.length]; next.focus(); next.click(); }
+                if(e.key === 'ArrowLeft'){ e.preventDefault(); var prev = filters[(idx-1+filters.length)%filters.length]; prev.focus(); prev.click(); }
+            });
+
+            // search input
+            if(searchInput){
+                var debounce;
+                searchInput.addEventListener('input', function(){ clearTimeout(debounce); debounce = setTimeout(applyFilters, 200); });
+            }
+
+            // allow tags to be focusable and keyboard-activatable
+            tags.forEach(function(t){ t.tabIndex = 0; t.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t.click(); } }); });
+
+            // set data-tags on articles where appropriate (non-invasive - only if missing)
+            container && container.querySelectorAll('article').forEach(function(a){ if(!a.getAttribute('data-tags')){
+                // infer tags from text (simple heuristic)
+                var txt = a.textContent.toLowerCase(); var present = [];
+                if(txt.indexOf('aml')!==-1 || txt.indexOf('anti-money')!==-1) present.push('aml');
+                if(txt.indexOf('ktp')!==-1 || txt.indexOf('knowledge transfer')!==-1) present.push('ktp');
+                if(txt.indexOf('health')!==-1 || txt.indexOf('care')!==-1) present.push('health');
+                if(txt.indexOf('maritime')!==-1) present.push('maritime');
+                if(present.length) a.setAttribute('data-tags', present.join(' '));
+            }});
+
         })();
     </script>
 </body>

@@ -419,6 +419,31 @@ section {
     .research-hero .hero-grid { grid-template-columns: 1fr; }
     .research-filters { justify-content: flex-start; }
 }
+
+/* Two-column layout for research page */
+.research-layout { display: grid; grid-template-columns: 320px 1fr; gap: 2rem; align-items:start; }
+.research-sidebar { background: transparent; }
+.sidebar-inner { position: sticky; top: 96px; padding: 1rem 0; }
+.search-input { width: 100%; padding: 0.6rem 0.8rem; border-radius: 10px; border: 1px solid var(--border-colour); margin-bottom: 0.75rem; }
+.tag-cloud { display:flex; gap:0.5rem; flex-wrap:wrap; }
+.tag { background: transparent; border: 1px solid rgba(15,23,42,0.06); padding:6px 10px; border-radius:999px; cursor:pointer; font-weight:600; }
+.tag.active { background: var(--accent-gradient); color:white; box-shadow: 0 8px 24px rgba(59,130,246,0.12); }
+
+.research-main { min-width: 0; }
+
+/* Project card visual tweaks */
+.project-card, .call-card { display:flex; flex-direction:column; }
+.card-head { align-items:flex-start; }
+.project-meta { margin-top:0.5rem; }
+.project-year { display:inline-block; background: rgba(15,23,42,0.04); color: var(--text-dark); padding:4px 8px; border-radius:8px; font-weight:700; margin-left:0.5rem; }
+
+/* Focus styles for accessibility */
+.research-filters .filter:focus, .tag:focus, .search-input:focus, .filter:focus { outline: 3px solid rgba(59,130,246,0.16); outline-offset: 2px; }
+
+@media (max-width: 880px) {
+    .research-layout { grid-template-columns: 1fr; }
+    .sidebar-inner { position: static; }
+}
 }
 
 .testimonials {
