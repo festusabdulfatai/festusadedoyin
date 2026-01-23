@@ -4450,3 +4450,10 @@ footer.site-footer {
 .nav-search-btn svg { width: 18px; height: 18px; display: block; }
 .nav-search-btn:hover { color: var(--accent-colour); background: rgba(59,130,246,0.04); }
 .nav-search-btn:focus { outline: 3px solid rgba(59,130,246,0.12); outline-offset: 2px; }
+
+/* Ensure hamburger menu is visible on all pages for mobile widths */
+@media (max-width: 880px) {
+    .hamburger { display: flex !important; }
+    /* keep nav-menu hidden by default until toggled */
+    .nav-menu { left: -100%; }
+}
