@@ -547,7 +547,7 @@ section {
 .navbar .container {
     display: flex;
     justify-content: space-between;
-    align-items: centre;
+    align-items: center;
 }
 
 .nav-brand {
@@ -1689,7 +1689,26 @@ body {
 /* Mobile improvements: nav, hero, research layout adjustments */
 @media (max-width: 880px) {
     .navbar .container { padding: 0 1rem; }
-    .nav-menu { display: none; }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2.5rem 0;
+        gap: 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid var(--border-colour);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        z-index: 1100;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
     .hamburger { display: flex; }
     .hero { padding: 120px 0 80px; }
     .hero h1 { font-size: 2.2rem; }
@@ -2530,36 +2549,10 @@ footer {
 footer p { margin-bottom: 0.5rem; font-size: 1rem; color: #cbd5e1; }
 
 /* ===================================
-   Responsive Design
+   Responsive Design - Additional mobile adjustments
    =================================== */
 
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: var(--bg-white);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        padding: 2.5rem 0;
-        gap: 0;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        border-top: 1px solid var(--border-colour);
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
-        z-index: 1100;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
     .nav-menu li {
         padding: 1.25rem 0;
     }
@@ -2574,8 +2567,6 @@ footer p { margin-bottom: 0.5rem; font-size: 1rem; color: #cbd5e1; }
         margin: 0.5rem;
         font-size: 1rem;
     }
-
-    /* Theme toggle removed */
 
     .hero {
         padding: 140px 0 100px;
@@ -4487,5 +4478,6 @@ footer.site-footer {
 @media (max-width: 880px) {
     .hamburger { display: flex !important; }
     /* keep nav-menu hidden by default until toggled */
-    .nav-menu { left: -100%; }
+    .nav-menu { left: -100% !important; }
+    .nav-menu.active { left: 0 !important; }
 }
