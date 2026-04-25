@@ -110,7 +110,6 @@ Consider adding:
 - Downloadable CV (PDF)
 - Blog/news section
 - Publication citation export (BibTeX, APA)
-- Google Scholar metrics integration
 
 ## 📄 License
 

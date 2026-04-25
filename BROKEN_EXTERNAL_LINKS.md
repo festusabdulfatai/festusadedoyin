@@ -63,7 +63,7 @@ Recommended action: Verify the DOI is correct. If incorrect, update to the corre
   Recommendation: Keep the link; some servers block HEAD requests which produce 405 in automated checkers. No visible user impact in browsers.
 
 - https://www.researchgate.net/profile/Festus-Adedoyin -> 403
-  Recommendation: Leave if you want the link public; 403 may be caused by ResearchGate’s blocking of non-browser agents. Consider linking to an alternative profile (Google Scholar or staff profile) if access is important.
+  Recommendation: Leave if you want the link public; 403 may be caused by ResearchGate’s blocking of non-browser agents. Consider linking to an alternative profile such as the university staff profile if access is important.
 
 
 Suggested next steps (pick one):

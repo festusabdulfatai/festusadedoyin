@@ -510,7 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
         } catch (error) {
             // Show error message
-            formError.textContent = '✗ There was an error sending your message. Please email me directly at fadedoyin@bournemouth.ac.uk';
+            formError.textContent = '✗ There was an error sending your message. Please email me directly at festusabdulfatai@gmail.com';
             formError.classList.add('active');
             formSuccess.classList.remove('active');
             

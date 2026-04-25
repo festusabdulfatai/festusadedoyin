@@ -4443,6 +4443,19 @@ footer.site-footer {
 #cookie-banner .cookie-text a { color: var(--accent-colour); text-decoration: underline; }
 #cookie-banner .cookie-actions { display:flex; gap:0.5rem; }
 
+#cookie-banner .btn-secondary,
+.cookie-manage .btn-secondary {
+    background: #000;
+    color: #fff;
+    border-color: transparent;
+}
+
+#cookie-banner .btn-secondary:hover,
+.cookie-manage .btn-secondary:hover {
+    background: #111;
+    color: #fff;
+}
+
 .cookie-manage {
     position: fixed; inset: 0; display: flex; align-items:center; justify-content:center; z-index:1300;
     background: rgba(15,23,42,0.45);
