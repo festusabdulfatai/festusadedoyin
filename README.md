@@ -126,9 +126,9 @@ Consider adding:
 
 ## 🚀 Website Deployment
 
-- **Workflow:** `.github/workflows/deploy-pages.yml` — deploys the static website whenever `main` is updated and supports manual dispatch.
-- **One-time setup:** In repository Settings → Pages, set the build and deployment source to **GitHub Actions**. The workflow publishes the repository's static files, including `CNAME`.
-- **Custom domain:** Keep `festusadedoyin.com` in the root `CNAME` file and configure the domain's DNS records to point to GitHub Pages.
+- **Host:** Netlify, configured by `netlify.toml` to publish the repository root as a static website with no build command.
+- **Continuous deployment:** Import `festusabdulfatai/festusadedoyin` in Netlify and use the `main` branch. Netlify will deploy each push automatically.
+- **Custom domain:** Add `festusadedoyin.com` in the Netlify site’s Domain management settings, then point the domain’s DNS records to the targets Netlify shows. Wait for Netlify DNS verification and HTTPS provisioning before relying on the custom domain.
 
 
 **Maintained by**: Dr Festus Adedoyin  
