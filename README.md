@@ -124,6 +124,12 @@ Consider adding:
 - **Required repo secrets:** `PLAUSIBLE_API_KEY` and `PLAUSIBLE_SITE` (when using Plausible), or `VISITOR_DATA_ENDPOINT` (optional, for a custom data endpoint).
 - **Enable:** Add the secret(s) under the repository Settings → Secrets and ensure GitHub Actions are enabled for the repo.
 
+## 🚀 Website Deployment
+
+- **Workflow:** `.github/workflows/deploy-pages.yml` — deploys the static website whenever `main` is updated and supports manual dispatch.
+- **One-time setup:** In repository Settings → Pages, set the build and deployment source to **GitHub Actions**. The workflow publishes the repository's static files, including `CNAME`.
+- **Custom domain:** Keep `festusadedoyin.com` in the root `CNAME` file and configure the domain's DNS records to point to GitHub Pages.
+
 
 **Maintained by**: Dr Festus Adedoyin  
 **Institution**: Bournemouth University  
