@@ -18,6 +18,44 @@ function animateCounter(element, target, duration = 1200) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const pageHeaders = {
+        'projects.html': {
+            title: 'AI & Data Science Projects',
+            subtitle: 'Applied research across FinTech, digital health, maritime analytics, and economic modelling.'
+        },
+        'teaching.html': {
+            title: 'Teaching & Academic Leadership',
+            subtitle: 'Programme leadership, curriculum development, and practical data science education.'
+        },
+        'publications.html': {
+            title: 'Research Publications',
+            subtitle: 'Books, journal articles, conference papers, and chapters in AI, data science, and applied economics.'
+        }
+    };
+    const pageName = window.location.pathname.split('/').pop();
+    const pageHeader = pageHeaders[pageName];
+
+    if (pageHeader && !document.querySelector('h1')) {
+        const header = document.createElement('section');
+        header.className = 'page-header generated-page-header';
+        header.setAttribute('aria-labelledby', 'page-title');
+
+        const container = document.createElement('div');
+        container.className = 'container';
+
+        const title = document.createElement('h1');
+        title.id = 'page-title';
+        title.textContent = pageHeader.title;
+
+        const subtitle = document.createElement('p');
+        subtitle.className = 'section-subtitle';
+        subtitle.textContent = pageHeader.subtitle;
+
+        container.append(title, subtitle);
+        header.append(container);
+        document.querySelector('.navbar')?.after(header);
+    }
+
     // ...existing code...
 
     // Animated counters for stats
